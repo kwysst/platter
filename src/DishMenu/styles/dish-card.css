@@ -1,0 +1,46 @@
+.dish-card {
+    display: flex;
+    align-items: center;
+    
+    width: 90%;
+    height: 100px;
+    
+    margin: 0.5rem 0;
+    
+    background: #fbdbb0;
+    /* background: linear-gradient(248deg, #ff9696cc 15%, #ffe7a3 100%); */
+
+    border-radius: 20px 6px 20px 6px;
+}
+
+.dish-image {
+
+    width: 80px;
+    height: 80px;
+
+    margin-left: 10px;
+
+    border-radius: 15px 5px;
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dish-info {
+    display: flex;
+    flex-direction: column;
+
+    height: 80px;
+    margin-left: 10px;
+}
+
+.dish-name, .dish-kbju { 
+    color: #222;
+    font-size: 22px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.dish-kbju {
+    color: #2229;
+    font-size: 12px;
+}
