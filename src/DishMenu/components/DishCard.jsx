@@ -2,16 +2,23 @@ import React from 'react';
 import '../styles/dish-card.css';
 import { DishImage } from './DishImage';
 import { DishList } from './DishList';
+import { DishDelimiter } from './DishDelimeter';
 
 
 class DishCard extends React.Component {
 
-	recipe = ['Сварить', 'Мелко порезать', 'В кипящую воду на 3 минуты'];
-	products = ['Макароны', 'Масло подсолнечное', 'Специи'];
+	constructor(props) {
+		super(props);
+		this.state = {
+			description: false
+		};
+	}
 
-	render() { 
+	render() {
 		return <section className='dish-card'>
-			<div className='dish-view'>
+			<div className='dish-view' onClick={() => {
+				this.setState({description: !this.state.description})
+			}}>
 				<DishImage image={ this.props.image } />
 				<div className='dish-info'>
 					<div className='dish-name'>{ this.props.name }</div>
@@ -23,11 +30,13 @@ class DishCard extends React.Component {
 					</div>
 				</div>
 			</div>
-			<div className='dish-description'>
-				<DishList name='Способ приготовления:' elements={this.recipe}/>
-				<DishList name='Список продуктов:' elements={this.products}/>
+			<div className={this.state.description ? 'dish-description' : 'dish-description dish-description-hidden'}>
+				<DishDelimiter />
+				<DishList name='Список продуктов:' elements={this.props.productsRemaining}/>
+				<DishDelimiter />
+				<DishList name='Способ приготовления:' elements={this.props.recipe}/>
+				<DishDelimiter />
 			</div>
-			
         </section>
 	}
 }

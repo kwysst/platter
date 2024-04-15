@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/dish-menu.css';
 import { DishCard } from './DishCard';
-import puncakeImage from '../source/puncake.png'
 import pelmeniImage from '../source/pelmeni.png'
 import borschtImage from '../source/borscht.png'
 import plovImage from '../source/plov.png'
@@ -18,42 +17,88 @@ class DishMenu extends React.Component {
 			name: 'Яичница',
 			image: eggsImage,
 			kbju: [1300, 1200, 0, 0],
-			type: 'Завтрак'
+			type: 'Завтрак',
+			productsRemaining: ['Яйцо C0', 'Масло подсолнечное', 'Соль'],
+			recipe: [
+				'Помыть яйца под проточной водой',
+				'Налить подсолнечное масло на сковороду',
+				'Разбить яйца на сковороду',
+				'Жарить в течение 3 минут'
+			]
 		},
 		{
 			key: 2,
-			name: 'Борщ',
+			name: 'Борщ (Русский)',
 			image: borschtImage,
 			kbju: [10, 12, 13, 14],
-			type: 'Первое блюдо'
+			type: 'Первое блюдо',
+			productsRemaining: ['Яйцо C0', 'Масло подсолнечное', 'Соль'],
+			recipe: [
+				'Помыть яйца под проточной водой',
+				'Налить подсолнечное масло на сковороду',
+				'Разбить яйца на сковороду',
+				'Жарить в течение 3 минут'
+			]
 		},
 		{
 			key: 3,
 			name: 'Жареные пельмени',
 			image: pelmeniImage,
 			kbju: [1300, 1200, 0, 0],
-			type: 'Второе блюдо'
+			type: 'Второе блюдо',
+			productsRemaining: ['Яйцо C0', 'Масло подсолнечное', 'Соль'],
+			recipe: [
+				'Помыть яйца под проточной водой',
+				'Налить подсолнечное масло на сковороду',
+				'Разбить яйца на сковороду',
+				'Жарить в течение 3 минут'
+			]
 		},
 		{
 			key: 4,
 			name: 'Плов',
 			image: plovImage,
 			kbju: [1300, 1200, 0, 0],
-			type: 'Ужин'
+			type: 'Ужин',
+			productsRemaining: ['Яйцо C0', 'Масло подсолнечное', 'Соль'],
+			recipe: [
+				'Помыть яйца под проточной водой',
+				'Налить подсолнечное масло на сковороду',
+				'Разбить яйца на сковороду',
+				'Жарить в течение 3 минут'
+			]
 		},
 		{
 			key: 5,
 			name: 'Чизкейк "Баунти"',
 			image: cakeImage,
 			kbju: [1300, 1200, 0, 0],
-			type: 'Десерт'
+			type: 'Десерт',
+			productsRemaining: ['Яйцо C0', 'Масло подсолнечное', 'Соль'],
+			recipe: [
+				'Помыть яйца под проточной водой',
+				'Налить подсолнечное масло на сковороду',
+				'Разбить яйца на сковороду',
+				'Жарить в течение 3 минут'
+			]
 		},
 		{
 			key: 6,
 			name: 'Пряники',
 			image: pryanikiImage,
 			kbju: [1300, 1200, 0, 0],
-			type: 'Снеки & K чаю'
+			type: 'Снеки & K чаю',
+			productsRemaining: [
+				'Яйцо C0', 
+				'Масло подсолнечное', 
+				'Соль'
+			],
+			recipe: [
+				'Помыть яйца под проточной водой',
+				'Налить подсолнечное масло на сковороду',
+				'Разбить яйца на сковороду',
+				'Жарить в течение 3 минут'
+			]
 		},
 	]
 
@@ -65,7 +110,10 @@ class DishMenu extends React.Component {
 				name={e.name} 
 				image={e.image} 
 				kbju={e.kbju} 
-				type={e.type} />) 
+				type={e.type} 
+				productsRemaining={e.productsRemaining}
+				recipe={e.recipe}
+				/>) 
 			}
 		</div>
 	}

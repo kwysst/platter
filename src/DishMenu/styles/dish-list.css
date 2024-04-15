@@ -1,10 +1,17 @@
 .dish-list-wrap {
     flex: 1;
-    margin: 10px 0 20px 10px;
+    margin: 0px 14px 10px 14px;
     height: auto;
 }
+
+.dish-list-name {
+    font-size: 16px;
+    color: #222;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .dish-list-wrap ul {
-    margin-left: 20px;
+    margin: 8px 0 0 40px;
 }
 .dish-list-wrap li {
     font-size: 14px;
@@ -12,8 +19,6 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.dish-list-name {
-    font-size: 16px;
-    color: #222;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.dish-list-wrap:last-child {
+    margin-bottom: 20px;
 }
