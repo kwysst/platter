@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './styles/app.css';
 import { DishMenu } from './DishMenu/components/DishMenu.jsx';
 import { Settings } from './Settings/components/Settings.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
-      <Route path="/platter/dishmenu/" element={ <DishMenu  /> } />
-      <Route path="/platter/settings/" element={ <Settings  /> } />
+      <Route exact path="/" element={ <div>hello world</div> } />
+      <Route exact path="/dishmenu" element={ <DishMenu /> } />
+      <Route exact path="/settings" element={ <Settings /> } />
     </Routes> 
-  </BrowserRouter>
+  </HashRouter>
 ); 
