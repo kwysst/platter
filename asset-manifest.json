@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/platter/static/css/main.2e07a59f.css",
-    "main.js": "/platter/static/js/main.ae2c334f.js",
+    "main.css": "/platter/static/css/main.deeae90d.css",
+    "main.js": "/platter/static/js/main.a656fbf8.js",
     "static/media/eggs.png": "/platter/static/media/eggs.73ae1063476a70b4ea63.png",
     "static/media/plov.png": "/platter/static/media/plov.bad274144f284b383cb0.png",
-    "static/media/puncake.png": "/platter/static/media/puncake.15a91711b99cea95107c.png",
     "static/media/pryaniki.png": "/platter/static/media/pryaniki.6715ace3ad70ef0de43d.png",
     "static/media/borscht.png": "/platter/static/media/borscht.3df9dc9c8bbae1b143c0.png",
     "static/media/pelmeni.png": "/platter/static/media/pelmeni.f53f2b1988002a5f31c0.png",
     "static/media/Garamond.ttf": "/platter/static/media/Garamond.4114a151797af532cace.ttf",
     "static/media/cake.png": "/platter/static/media/cake.20a8ef75fd65934aa695.png",
     "index.html": "/platter/index.html",
-    "main.2e07a59f.css.map": "/platter/static/css/main.2e07a59f.css.map",
-    "main.ae2c334f.js.map": "/platter/static/js/main.ae2c334f.js.map"
+    "main.deeae90d.css.map": "/platter/static/css/main.deeae90d.css.map",
+    "main.a656fbf8.js.map": "/platter/static/js/main.a656fbf8.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e07a59f.css",
-    "static/js/main.ae2c334f.js"
+    "static/css/main.deeae90d.css",
+    "static/js/main.a656fbf8.js"
   ]
 }
