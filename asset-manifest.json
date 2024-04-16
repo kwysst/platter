@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/platter/static/css/main.deeae90d.css",
-    "main.js": "/platter/static/js/main.a656fbf8.js",
-    "static/media/eggs.png": "/platter/static/media/eggs.73ae1063476a70b4ea63.png",
-    "static/media/plov.png": "/platter/static/media/plov.bad274144f284b383cb0.png",
-    "static/media/pryaniki.png": "/platter/static/media/pryaniki.6715ace3ad70ef0de43d.png",
-    "static/media/borscht.png": "/platter/static/media/borscht.3df9dc9c8bbae1b143c0.png",
-    "static/media/pelmeni.png": "/platter/static/media/pelmeni.f53f2b1988002a5f31c0.png",
+    "main.css": "/platter/static/css/main.912355a9.css",
+    "main.js": "/platter/static/js/main.0e5b247d.js",
     "static/media/Garamond.ttf": "/platter/static/media/Garamond.4114a151797af532cace.ttf",
-    "static/media/cake.png": "/platter/static/media/cake.20a8ef75fd65934aa695.png",
+    "static/media/Гречневая каша с молоком и медом.jpg": "/platter/static/media/Гречневая каша с молоком и медом.bded2fb2314cd6f7b15b.jpg",
+    "static/media/Бутерброды с копченостями.jpg": "/platter/static/media/Бутерброды с копченостями.7ef6bff1ad4f317101f6.jpg",
+    "static/media/tmp.jpg": "/platter/static/media/tmp.0d559e2b68b3e1461ccf.jpg",
+    "static/media/Бутерброды с плавленым сыром.jpg": "/platter/static/media/Бутерброды с плавленым сыром.9f107582783c102c1b48.jpg",
+    "static/media/Бутерброды со шпротами.jpg": "/platter/static/media/Бутерброды со шпротами.2953d2959ddee39d968b.jpg",
+    "static/media/Блины с икрой.jpg": "/platter/static/media/Блины с икрой.63d96fb3fbb394204a0e.jpg",
+    "static/media/Бутерброды с икрой.jpg": "/platter/static/media/Бутерброды с икрой.337f7a8cd1383ed9adbd.jpg",
+    "static/media/Бутерброды с грибами.jpg": "/platter/static/media/Бутерброды с грибами.ca5f010a7c8beef0781e.jpg",
+    "static/media/Бутерброды с колбасой и сыром.jpg": "/platter/static/media/Бутерброды с колбасой и сыром.5497c5d5576883f2bc8d.jpg",
     "index.html": "/platter/index.html",
-    "main.deeae90d.css.map": "/platter/static/css/main.deeae90d.css.map",
-    "main.a656fbf8.js.map": "/platter/static/js/main.a656fbf8.js.map"
+    "main.912355a9.css.map": "/platter/static/css/main.912355a9.css.map",
+    "main.0e5b247d.js.map": "/platter/static/js/main.0e5b247d.js.map"
   },
   "entrypoints": [
-    "static/css/main.deeae90d.css",
-    "static/js/main.a656fbf8.js"
+    "static/css/main.912355a9.css",
+    "static/js/main.0e5b247d.js"
   ]
 }
