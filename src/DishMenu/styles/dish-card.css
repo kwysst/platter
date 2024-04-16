@@ -4,12 +4,12 @@
     flex-direction: column;
     align-items: center;
 
-    width: 90%;
+    width: calc(90% - 10px);
     min-height: 100px;
 
     margin: 8px 0;
 
-    background: #ffeccf;
+    background: #fef0da;
     /* background-color: #fbdbb0; */
     /* background: linear-gradient(248deg, #ff9696cc 15%, #ffe7a3 100%); */
 
@@ -32,7 +32,7 @@
     
     width: 100%;
     overflow: hidden;
-    
+
     max-height: 400px;
     transition: all .5s ease-out;
 }
@@ -71,12 +71,12 @@
 }
 
 .dish-name { 
+    margin-bottom: 2px;
     color: #222;
-    font-weight: 900;
     font-size: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.dish-kbju {
+.dish-kbju, .dish-stats {
     color: #2229;
     margin: 2px 0;
     font-size: 12px;
@@ -96,6 +96,7 @@
     transform: rotateZ(90deg);
     
     color: #2229;
+    font-style: italic;
     font-size: 11px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

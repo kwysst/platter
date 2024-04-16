@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/dish-list.css';
 
 
-class DishList extends React.Component {
+class DishCardList extends React.Component {
 
 	render() { 
         return <div className="dish-list-wrap">
@@ -12,4 +12,4 @@ class DishList extends React.Component {
     }
 }
 
-export { DishList };
+export { DishCardList };
