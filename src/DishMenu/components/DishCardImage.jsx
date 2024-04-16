@@ -4,9 +4,13 @@ import '../styles/dish-image.css';
 
 class DishCardImage extends React.Component {
 
-	render() { 
-		return <img className='dish-image' src={ require(`../source/${this.props.image}.jpeg`) } alt=''/>
-		// return <img className='dish-image' src={this.props.image} alt=''/>
+	render() {
+		try {
+			return <img className='dish-card-image' src={ require(`../source/breakfast/${this.props.image}.jpg`) } alt=''/>
+		}
+		catch (e) {
+			return <img className='dish-card-image' src={ require(`../source/tmp.jpg`) } alt=''/>
+		}
 	}
 }
 export { DishCardImage };

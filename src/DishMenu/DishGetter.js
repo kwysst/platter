@@ -4,9 +4,9 @@ class DishGetter {
         return Math.round(Math.random() * (max - min) + min);
     }
 
-    static GetDishByCategory(data, category) {
-        let list = data[category];
-        return list[this.GetRnd(0, list.length - 1)];
+    static GetDishByCategory(data) {
+        const index = this.GetRnd(0, data.length - 1);
+        return data[index];
     }
 }
 
