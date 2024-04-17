@@ -6,7 +6,7 @@ class DishCardImage extends React.Component {
 
 	render() {
 		try {
-			return <img className='dish-card-image' src={ require(`../source/breakfast/${this.props.image}.jpg`) } alt=''/>
+			return <img className='dish-card-image' src={ require(`../source/${this.props.category}/${this.props.image}.jpg`) } alt=''/>
 		}
 		catch (e) {
 			return <img className='dish-card-image' src={ require(`../source/tmp.jpg`) } alt=''/>

@@ -21,12 +21,39 @@ class DishMenu extends React.Component {
 		// console.log(BreakfastData.map(e => e.name).sort((a, b) => a > b ? 1 : -1));
 
 		LocalDB.CheckForUpdates();
-		let dishes = LocalDB.GetDishes() || [
-			DishGetter.GetDishByCategory(BreakfastData),
-			DishGetter.GetDishByCategory(BreakfastData),
-			DishGetter.GetDishByCategory(BreakfastData),
-		];
+		// let dishes = LocalDB.GetDishes() || [
+		// 	DishGetter.GetDishByCategory(BreakfastData),
+		// 	DishGetter.GetDishByCategory(SoupData)
+		// ];
+		// console.log(dishes)
 		
+
+
+		let dishes = LocalDB.GetDishes() || [
+			{
+				category: 'breakfast',
+				categoryRU: 'Завтрак',
+				item: DishGetter.GetDishByCategory(BreakfastData)
+			},
+			{
+				category: 'salad',
+				categoryRU: 'Салат',
+				item: DishGetter.GetDishByCategory(SaladData)
+			},
+			{
+				category: 'soup',
+				categoryRU: 'Первое блюдо',
+				item: DishGetter.GetDishByCategory(SoupData)
+			},
+			{
+				category: 'dessert',
+				categoryRU: 'Дессерт',
+				item: DishGetter.GetDishByCategory(DessertData)
+			}
+		];
+
+
+
 		LocalDB.SetDishes(dishes);
 
 		this.state = { dishes: dishes };
@@ -38,20 +65,37 @@ class DishMenu extends React.Component {
 			{ 
 				this.state.dishes.map((e, i) => <DishCard 
 					key={i++}
-					name={e.name} 
-					image={e.image} 
-					kbju={e.kbju} 
-					type={e.type} 
-					products={e.products}
-					recipe={e.recipe}
-					time={e.time}
+					name={e.item.name}
+					kbju={e.item.kbju} 
+					category={e.category} 
+					categoryRU={e.categoryRU} 
+					products={e.item.products}
+					recipe={e.item.recipe}
+					time={e.item.time}
 				/>) 
 			}
 			<button className='dish-refresh-btn' onClick={() => {
 				let dishes = [
-					DishGetter.GetDishByCategory(BreakfastData),
-					DishGetter.GetDishByCategory(BreakfastData),
-					DishGetter.GetDishByCategory(BreakfastData),
+					{
+						category: 'breakfast',
+						categoryRU: 'Завтрак',
+						item: DishGetter.GetDishByCategory(BreakfastData)
+					},
+					{
+						category: 'salad',
+						categoryRU: 'Салат',
+						item: DishGetter.GetDishByCategory(SaladData)
+					},
+					{
+						category: 'soup',
+						categoryRU: 'Первое блюдо',
+						item: DishGetter.GetDishByCategory(SoupData)
+					},
+					{
+						category: 'dessert',
+						categoryRU: 'Дессерт',
+						item: DishGetter.GetDishByCategory(DessertData)
+					}
 				];
 				LocalDB.SetDishes(dishes);
 		

@@ -19,7 +19,7 @@ class DishCard extends React.Component {
 			<div className='dish-view' onClick={() => {
 				this.setState({description: !this.state.description})
 			}}>
-				<DishCardImage image={ this.props.name } />
+				<DishCardImage category={this.props.category} image={ this.props.name } />
 				<div className='dish-info'>
 					<div className='dish-name'>{ this.props.name }</div>
 					<div className='dish-kbju'>
@@ -37,7 +37,7 @@ class DishCard extends React.Component {
 				<DishCardDelimiter />
 			</div>
 			<div className='dish-type'>
-				{ this.props.type }
+				{ this.props.categoryRU }
 			</div>
         </section>
 	}
