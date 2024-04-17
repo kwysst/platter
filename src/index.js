@@ -5,6 +5,8 @@ import './styles/app.css';
 import { DishMenu } from './DishMenu/components/DishMenu.jsx';
 import { Settings } from './Settings/components/Settings.jsx';
 
+document.title = 'Platter';
+document.querySelector("meta[name='description']").content="New menu every day.";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
