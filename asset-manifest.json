@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/platter/static/css/main.912355a9.css",
-    "main.js": "/platter/static/js/main.3d034926.js",
+    "main.js": "/platter/static/js/main.0b1b7932.js",
     "static/media/Garamond.ttf": "/platter/static/media/Garamond.4114a151797af532cace.ttf",
     "static/media/Куриный бульон.jpg": "/platter/static/media/Куриный бульон.1df592892116cf361044.jpg",
     "static/media/Мороженое с фруктами.jpg": "/platter/static/media/Мороженое с фруктами.687a5efc0d8e4e280886.jpg",
@@ -67,10 +67,10 @@
     "static/media/Ванильные кексы.jpg": "/platter/static/media/Ванильные кексы.bef4e8458d1de5e416fb.jpg",
     "index.html": "/platter/index.html",
     "main.912355a9.css.map": "/platter/static/css/main.912355a9.css.map",
-    "main.3d034926.js.map": "/platter/static/js/main.3d034926.js.map"
+    "main.0b1b7932.js.map": "/platter/static/js/main.0b1b7932.js.map"
   },
   "entrypoints": [
     "static/css/main.912355a9.css",
-    "static/js/main.3d034926.js"
+    "static/js/main.0b1b7932.js"
   ]
 }
