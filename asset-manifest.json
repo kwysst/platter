@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/platter/static/css/main.912355a9.css",
-    "main.js": "/platter/static/js/main.b961a894.js",
+    "main.css": "/platter/static/css/main.7379fa83.css",
+    "main.js": "/platter/static/js/main.15f0bed5.js",
     "static/media/Garamond.ttf": "/platter/static/media/Garamond.4114a151797af532cace.ttf",
+    "static/media/CormorantInfant.ttf": "/platter/static/media/CormorantInfant.0fc64ff1c3bd70a44a4d.ttf",
     "static/media/Куриный бульон.jpg": "/platter/static/media/Куриный бульон.1df592892116cf361044.jpg",
     "static/media/Мороженое с фруктами.jpg": "/platter/static/media/Мороженое с фруктами.687a5efc0d8e4e280886.jpg",
     "static/media/Рассольник.jpg": "/platter/static/media/Рассольник.ca783d20937f502313c8.jpg",
@@ -65,12 +66,21 @@
     "static/media/Малиновый тарт.jpg": "/platter/static/media/Малиновый тарт.a21dbb047446cdfb800e.jpg",
     "static/media/Чизкейк.jpg": "/platter/static/media/Чизкейк.add0c129e85cafa07a6b.jpg",
     "static/media/Ванильные кексы.jpg": "/platter/static/media/Ванильные кексы.bef4e8458d1de5e416fb.jpg",
+    "static/media/eye-slash.svg": "/platter/static/media/eye-slash.27cd73ae964580ee6ac8.svg",
+    "static/media/settings.svg": "/platter/static/media/settings.0eb57c6f5b7d760087ba.svg",
+    "static/media/eye.svg": "/platter/static/media/eye.812a5abf6da667b1617d.svg",
+    "static/media/sun.svg": "/platter/static/media/sun.b2bb06d27f07bef1eb9e.svg",
+    "static/media/moon.svg": "/platter/static/media/moon.4432bfd84a3911c29fa9.svg",
     "index.html": "/platter/index.html",
-    "main.912355a9.css.map": "/platter/static/css/main.912355a9.css.map",
-    "main.b961a894.js.map": "/platter/static/js/main.b961a894.js.map"
+    "static/media/download.svg": "/platter/static/media/download.fdddda4d3fadfc13560a.svg",
+    "static/media/close.svg": "/platter/static/media/close.59746be53678ec993b61.svg",
+    "static/media/list.svg": "/platter/static/media/list.bff2c59549dd7a4f9a73.svg",
+    "static/media/arrow-back.svg": "/platter/static/media/arrow-back.a134d3341aca34faa023.svg",
+    "main.7379fa83.css.map": "/platter/static/css/main.7379fa83.css.map",
+    "main.15f0bed5.js.map": "/platter/static/js/main.15f0bed5.js.map"
   },
   "entrypoints": [
-    "static/css/main.912355a9.css",
-    "static/js/main.b961a894.js"
+    "static/css/main.7379fa83.css",
+    "static/js/main.15f0bed5.js"
   ]
 }
