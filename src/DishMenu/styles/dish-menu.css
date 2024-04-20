@@ -1,12 +1,23 @@
+.dish-menu-wrap {
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+
 .dish-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     
     width: 100%;
-    height: 100%;
+    min-width: 100%; 
 
-    background-color: #fafafa;
+    background-color: #fafafa; 
+
+    overflow: scroll;
+    height: max-content;
 }
 
 .dish-menu-name {
@@ -15,15 +26,5 @@
     font-family: Garamond;
 }
 
-.dish-refresh-btn {
-    width: calc(60% - 10px);
-    height: 46px;
-    margin: 20px 0;
-    border: none;
-    border-radius: 3px;
-    font-size: 20px;
-    background: none;
-    box-shadow: 0px 0px 3px 1px #22222242;
-    font-family: 'Garamond';
-}
+
 

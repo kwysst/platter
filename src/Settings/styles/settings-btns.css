@@ -1,0 +1,40 @@
+.settings-btn-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin: auto 0 20px 0;
+}
+
+
+
+.settings-refresh-btn {
+    width: calc(80% - 46px - 10px);
+    height: 46px;
+    margin: 0 0 0 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    background: none;
+    box-shadow: 0px 0px 3px 1px #22222242;
+    font-family: 'Garamond';
+}
+
+.settings-back-btn {
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    background: none;
+    box-shadow: 0px 0px 3px 1px #22222242;
+    font-family: 'Garamond';
+    background-image: url('../../source/arrow-back.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 66%;
+}

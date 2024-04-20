@@ -1,0 +1,37 @@
+.dish-btn-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.dish-refresh-btn {
+    width: calc(80% - 10px - 46px);
+    height: 46px;
+    margin: 20px 10px 20px 0;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    background: none;
+    box-shadow: 0px 0px 3px 1px #22222242;
+    font-family: 'Garamond';
+}
+
+.dish-settings-btn {
+    width: 46px;
+    height: 46px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    background: none;
+    box-shadow: 0px 0px 3px 1px #22222242;
+    font-family: 'Garamond';
+    background-image: url('../../source/settings.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}

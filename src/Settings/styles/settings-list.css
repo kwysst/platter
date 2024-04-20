@@ -1,0 +1,63 @@
+.settings-list {
+    width: 80%;
+    list-style: none;
+}
+.settings-list > li {
+    display: flex;
+    flex-direction: row;
+    font-family: 'CormorantInfant';
+    font-weight: 900;
+    font-size: 20px;
+    min-height: 40px;
+    color: #222;
+    justify-content: space-between;
+    align-items: center;
+}
+.settings-list > :last-child {
+    background: #e8e8e8;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+.settings-list-disabled {
+    opacity: 0.3;
+}
+
+.settings-list > li > span {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings-list-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../../source/list.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.settings-visibility-icon {
+    margin: 0 6px;
+    background-image: url('../../source/eye.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.settings-unvisibility-icon {
+    margin: 0 6px;
+    background-image: url('../../source/eye-slash.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.settings-close-icon {
+    background-image: url('../../source/close.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.settings-add-icon {
+    background-image: url('../../source/close.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateZ(45deg);
+}
