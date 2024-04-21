@@ -33,30 +33,30 @@
     display: block;
     width: 30px;
     height: 30px;
-    background-image: url('../../source/list.svg');
+    background-image: url('../../source/icons/list.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 .settings-visibility-icon {
     margin: 0 6px;
-    background-image: url('../../source/eye.svg');
+    background-image: url('../../source/icons/eye.svg');
     background-position: center;
     background-repeat: no-repeat;
 }
 .settings-unvisibility-icon {
     margin: 0 6px;
-    background-image: url('../../source/eye-slash.svg');
+    background-image: url('../../source/icons/eye-slash.svg');
     background-position: center;
     background-repeat: no-repeat;
 }
 .settings-close-icon {
-    background-image: url('../../source/close.svg');
+    background-image: url('../../source/icons/close.svg');
     background-position: center;
     background-repeat: no-repeat;
 }
 .settings-add-icon {
-    background-image: url('../../source/close.svg');
+    background-image: url('../../source/icons/close.svg');
     background-position: center;
     background-repeat: no-repeat;
     transform: rotateZ(45deg);

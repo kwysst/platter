@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter, Routes, Route } from 'react-router-dom';
 import './styles/app.css';
-import { DishMenu } from './DishMenu/components/DishMenu';
-import { Settings } from './Settings/components/Settings';
 
+import { DishGetter } from './hooks/DishGetter';
+import { LocalDB } from './hooks/LocalDB';
 
-import { DishGetter } from './DishMenu/DishGetter';
-import { LocalDB } from './DishMenu/LocalDB';
+import Menu from './components/Dishes/Menu';
+import Settings from './components/Settings/Settings';
 
 
 
@@ -15,12 +14,10 @@ import { LocalDB } from './DishMenu/LocalDB';
 document.title = 'Platter';
 document.querySelector("meta[name='description']").content="New menu every day.";
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-      
-      <DishMenu DishGetter={DishGetter} LocalDB={LocalDB}/>
+      <Menu DishGetter={DishGetter} LocalDB={LocalDB}/>
       <Settings DishGetter={DishGetter} LocalDB={LocalDB}/>
   </>
 

@@ -21,8 +21,8 @@ html, body, #root {
 
 @font-face {
     font-family: 'Garamond';
-    src: url('Garamond.ttf'); }
+    src: url('../source/fonts/Garamond.ttf'); }
 @font-face {
     font-family: 'CormorantInfant';
-    src: url('CormorantInfant.ttf'); }
+    src: url('../source/fonts/CormorantInfant.ttf'); }
     
