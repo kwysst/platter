@@ -7,15 +7,17 @@ export default class Menu extends React.Component {
 
 	constructor(props) {
 		super(props);
+		const { DishGetter, LocalDB } = this.props;
+		
+		LocalDB.CheckForUpdates();
+		
+		let [ schema, menu ] = [ LocalDB.GetSchema(), LocalDB.GetMenu() ];
 
-		this.props.LocalDB.CheckForUpdates();
-		
-		let menu = 
-			this.props.LocalDB.GetMenu() || 
-			this.props.DishGetter.GetNewMenu();
-		
+		if (!DishGetter.IsMenuValid(menu, schema))
+			menu = DishGetter.GetValidMenu(schema);
+
 		this.state = { menu: menu };
-		this.props.LocalDB.SetMenu(menu);
+		LocalDB.SetMenu(menu);
 	}
 
 	// setState & save in localStorage
@@ -25,6 +27,7 @@ export default class Menu extends React.Component {
     }
 	
 	render() {
+		const { DishGetter, LocalDB } = this.props;
 		const { menu } = this.state;
 		return <div className='dish-menu-wrap'>
 			<div className='dish-menu'>
@@ -34,7 +37,7 @@ export default class Menu extends React.Component {
 				
 				<Buttons 
 					UpdateMenuState={(value) => { this.UpdateMenuState(value) }}
-					GetNewMenu={() => this.props.DishGetter.GetNewMenu()}/>
+					GetNewMenu={() => DishGetter.GetValidMenu(LocalDB.GetSchema())}/>
 			</div>
 		</div>
 	}

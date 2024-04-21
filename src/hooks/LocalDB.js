@@ -24,7 +24,7 @@ class LocalDB {
         ];
     }
     static GetMenu() {
-        return (localStorage.menu && JSON.parse(localStorage.menu)) || null;
+        return (localStorage.menu && JSON.parse(localStorage.menu)) || [];
     }
     static UpdateDate() {
         localStorage.updated = new Date().toLocaleDateString();
@@ -32,11 +32,11 @@ class LocalDB {
 
 
     static Print() {
-        console.log({
+        console.log({ localStorage: {
             updated: localStorage.updated,
             menu: (localStorage.menu && JSON.parse(localStorage.menu)) || [],
             schema: (localStorage.schema && JSON.parse(localStorage.schema)) || []
-        })
+        }})
     }
 }
 

@@ -10,23 +10,42 @@ const GetRnd = (min, max) => Math.round(Math.random() * (max - min) + min);
 
 class DishGetter {
 
-    static GetDishByCategory(data) {
+    static GetDishByData(data) {
         const index = GetRnd(0, data.length - 1);
         return data[index];
     }
 
-    static GetDishData(category) {
-        return DishGetter.GetDishLists().filter(e => e.category === category ? 1 : null)[0].item;
+    static GetDataByString(category) {
+        return DishGetter.DishObj.filter(e => e.category === category ? e : null)[0].data;
     }
 
-    static GetNewMenu() {
-        return DishGetter.DishObj.map(e => {
-            return {
+    static IsMenuValid(menu, schema) {
+        let validationSchema = schema.filter(e => e.status && e);
+        if (menu.length !== validationSchema.length) return false;
+        let schemedMenu = menu.filter((dish, i) => {
+            return dish.category === validationSchema[i].category 
+                ? dish 
+                : null;
+        });
+        return schemedMenu.length === menu.length;
+    }
+
+    static GetValidMenu(schema) {
+        const menu = [];
+        let validationSchema = schema.filter(e => e.status && e);
+
+        validationSchema.forEach(e => {
+            let data = DishGetter.GetDataByString(e.category);
+            menu.push({
                 'category': e.category,
                 'categoryName': e.categoryName,
-                'item': DishGetter.GetDishByCategory(e.data)
-        }});
+                'item': DishGetter.GetDishByData(data)
+            });
+        });
+
+        return menu;
     }
+
     static GetCategories() {
         return DishGetter.DishObj.map(e => {
             return {
@@ -34,13 +53,6 @@ class DishGetter {
                 'categoryName': e.categoryName
         }})
     }
-    // static GetSchema(category, categoryName) {
-    //     return {
-    //         category: category,
-    //         categoryName: categoryName,
-    //         status: true
-    //     }
-    // }
     
     static DishObj = [
         {
