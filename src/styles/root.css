@@ -1,0 +1,31 @@
+:root {
+    --color-background-soft: #fcfcfc;
+    --color-background-hard: #fff;
+    --color-background-accent: #fff6e9;
+    --color-soft: #222a;
+    --color-hard: #222;
+
+    --font-header: 'Garamond';
+    --font-content: 'Aetherius';
+    --font-accent: 'GunnyRewritten';
+
+    --fontsize-larger: 30px;
+    --fontsize-large: 22px;
+    --fontsize-medium: 18px;
+    --fontsize-small: 14px;
+    --fontsize-smaller: 12px;
+
+    --button-size: 46px;
+    --button-thick-size: 100px;
+    --header-margin:  40px 0 20px 0;
+
+    --card-width: 90%;
+    --card-height: 100px;
+    --card-border-radius: 10px; /* 30px 8px 8px 8px; 25px 4px 4px 6px; */
+
+    --dish-card-content-height: 80px;
+    --dish-image-border-radius: 12px 6px 30px 6px; /* 30px 2px; 15px 5px */
+
+    --settings-width: 80%;
+    --settings-inline-icon-height: 32px;
+}

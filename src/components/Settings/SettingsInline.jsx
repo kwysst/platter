@@ -1,5 +1,7 @@
 import React from 'react';
-import '../../styles/settings/settings-line.css';
+import { ReactComponent as DownloadIcon } from '../../source/icons/download.svg'
+import { ReactComponent as UploadIcon } from '../../source/icons/upload.svg'
+import '../../styles/settings/settings-inline.css';
 
 export default class SettingsInline extends React.Component {
 
@@ -9,23 +11,18 @@ export default class SettingsInline extends React.Component {
     }
 
 	render() {
-		return <div className='settings-line-wrap'>
+		return <div className='settings-inline-wrap'>
 
-            <span className='settings-line' onClick={() => {
-                this.setState({themeDark: !this.state.themeDark});
-            }}>{this.state.themeDark ? 'Светлая' : 'Темная'} тема
-                <i className={`settings-${this.state.themeDark ? 'sun' : 'moon'}-icon`}></i>
+            <span className='settings-link settings-inline' onClick={() => {
+               alert('Ведутся технические работы!!!');
+            }}> Загрузить профиль
+                <UploadIcon className='settings-inline-icon' />
             </span>
-
-            <span className='settings-line' onClick={() => {
-               console.log('downloaded')
-            }} style={{
-                color: '#3080c8',
-                textDecoration: 'underline'
-            }}> Выгрузить профиль
-                <i className='settings-download-icon'></i>
+            <span className='settings-link settings-inline' onClick={() => {
+               alert('Ведутся технические работы!!!');
+            }}> Сохранить профиль
+                <DownloadIcon className='settings-inline-icon' />
             </span>
-
         </div>   
 	}
 }

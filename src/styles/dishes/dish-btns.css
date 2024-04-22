@@ -5,33 +5,35 @@
     justify-content: center;
     align-items: center;
 
-    width: 100%;
+    width: calc( var(--card-width)  - 10px);
+    margin: auto 6px 0 0;
+}
+
+.dish-btn-wrap button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    flex: 1;
+    height: var(--button-size);
+
+    border: 1px solid #5553;
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 1px 1px #22222222; */
+    background-color: var(--color-background-hard);
+    
+    color: var(--color-hard);
+    font-size: var(--fontsize-large);
+    font-family: var(--font-header);
 }
 
 .dish-refresh-btn {
-    width: calc(80% - 10px - 46px);
-    height: 46px;
-    margin: 20px 10px 20px 0;
-    border: none;
-    border-radius: 3px;
-    font-size: 20px;
-    background: none;
-    box-shadow: 0px 0px 3px 1px #22222242;
-    font-family: 'Garamond';
+    margin: 20px 5px;
 }
 
-.dish-settings-btn {
-    width: 46px;
-    height: 46px;
-    margin: 20px 0;
-    border: none;
-    border-radius: 3px;
-    font-size: 20px;
-    background: none;
-    box-shadow: 0px 0px 3px 1px #22222242;
-    font-family: 'Garamond';
-    background-image: url('../../source/icons/settings.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 80%;
+.dish-btn-wrap button svg {
+    width: 34px;
+    height: 34px;
+
+    color: var(--color-hard);
 }

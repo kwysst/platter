@@ -15,14 +15,12 @@ html, body, #root {
 #root {
     display: flex;
     overflow: hidden;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
 }
 
 
+::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
 
-@font-face {
-    font-family: 'Garamond';
-    src: url('../source/fonts/Garamond.ttf'); }
-@font-face {
-    font-family: 'CormorantInfant';
-    src: url('../source/fonts/CormorantInfant.ttf'); }
-    

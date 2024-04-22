@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/dishes/dish-list.css';
 
 export default class CardList extends React.Component {
 

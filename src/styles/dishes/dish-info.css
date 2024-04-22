@@ -1,0 +1,56 @@
+.dish-info {
+    display: flex;
+    align-items: center;
+    
+    width: 100%;
+    height: var(--card-height);
+}
+
+
+.dish-card-image {
+    width: var(--dish-card-content-height);
+    height: var(--dish-card-content-height);
+
+    margin-left: 12px;
+
+    border-radius: var(--dish-image-border-radius);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dish-stats {
+    display: flex;
+    flex-direction: column;
+
+    height: var(--dish-card-content-height);
+    margin-left: 10px;
+}
+
+.dish-name { 
+    margin: 0 6px 2px 0;
+    
+    color: var(--color-hard);
+    font-size: var(--fontsize-large);
+    font-family: var(--font-accent);
+    line-height: 20px;
+}
+
+.dish-kbju, .dish-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    color: var(--color-soft);
+    font-weight: 900;
+    font-size: var(--fontsize-smaller);
+    font-family: var(--font-content);
+}
+.dish-icon {
+    display: flex;
+
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}

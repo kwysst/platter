@@ -1,26 +1,13 @@
 import React from 'react';
+import { ReactComponent as EyeIcon } from '../../source/icons/eye.svg'
+import { ReactComponent as EyeSlashIcon } from '../../source/icons/eye-slash.svg'
+import { ReactComponent as CloseIcon } from '../../source/icons/close.svg'
 import '../../styles/settings/settings-list.css';
-import ListSelect from './ListSelect';
 
 export default class SettingsList extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        let schema = this.props.LocalDB.GetSchema();
-			
-		this.state = { adding: false, schema: schema };
-		this.props.LocalDB.SetSchema(schema);
-    }
-
-    // setState & save in localStorage
-	UpdateSchemaState(value) {
-		this.setState({ schema: value });
-		this.props.LocalDB.SetSchema(value);
-	}
-
 	render() {
-        const { schema } = this.state;
+        const { schema, UpdateSchemaState } = this.props;
 		return <>
             <ul className='settings-list'>
                 {
@@ -30,45 +17,29 @@ export default class SettingsList extends React.Component {
                             onClick={(event) => {
                                 if (event.target === event.currentTarget) {
                                     schema[i-1].status = !schema[i-1].status;
-                                    this.UpdateSchemaState(schema);
+                                    UpdateSchemaState(schema);
                                 }
                             }}
-                        > {e.categoryName}
+                        >{e.categoryName}
                             <span>
-                                {/* <i className='settings-list-icon'></i> */}
-                                <i className={`settings-list-icon settings-${e.status ? '' : 'un'}visibility-icon`} onClick={(e) => {
-                                    schema[i-1].status = !schema[i-1].status;
-                                    this.UpdateSchemaState(schema);
-
-                                }}></i>
-                                <i className='settings-list-icon settings-close-icon' onClick={() => {
+                                {e.status ? 
+                                    <EyeIcon className='settings-list-icon' onClick={() => {
+                                        schema[i-1].status = !schema[i-1].status;
+                                        UpdateSchemaState(schema);
+                                    }}/> : 
+                                    <EyeSlashIcon className='settings-list-icon' onClick={() => {
+                                        schema[i-1].status = !schema[i-1].status;
+                                        UpdateSchemaState(schema);
+                                    }}/>}
+                                <CloseIcon className='settings-list-icon' onClick={() => {
                                     schema.splice([i-1], 1);
-                                    this.UpdateSchemaState(schema);
-                                }}></i>
+                                    UpdateSchemaState(schema);
+                                }}/>
                             </span>
                         </li>
                     )
                 }
-
-                <li onClick={() => this.setState({adding: true}) }>
-                    <span>
-                        <i className='settings-list-icon settings-add-icon'></i>
-                    </span>
-                </li>
             </ul>
-            
-            <ListSelect 
-                visible={this.state.adding} 
-                schema={schema}
-                categories={this.props.categories}
-                HideChoice={() => {
-                    this.setState({adding: false});
-                }}
-                PushToSchema={(value) => {
-                    this.setState({adding: false});
-                    this.UpdateSchemaState(value);
-                }}
-            />
         </>
 	}
 }

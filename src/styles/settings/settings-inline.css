@@ -1,0 +1,32 @@
+.settings-inline-wrap {
+    position: relative;
+    width: var(--settings-width);
+    margin: auto 0 16px 6px;
+}
+
+.settings-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    margin: 2px 0;
+
+    color: var(--color-hard);
+    font-size: var(--fontsize-medium);
+    font-family: var(--font-content);
+
+    transition: 1s all;
+}
+
+.settings-link {
+    color: #3080c8;
+    text-decoration: underline;
+}
+
+.settings-inline-icon {
+    display: block;
+    
+    width: var(--settings-inline-icon-height);
+    height: var(--settings-inline-icon-height);
+}

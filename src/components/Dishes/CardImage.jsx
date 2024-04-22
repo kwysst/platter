@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/dishes/dish-image.css';
 
 export default class CardImage extends React.Component {
 	render() {

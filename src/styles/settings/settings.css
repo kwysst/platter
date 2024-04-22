@@ -5,13 +5,13 @@
     
     width: 100%;
     min-width: 100%;
-    height: auto;
+    height: 100%;
 
-    background-color: #fafafa;
+    background-color: var(--color-background-soft);
 }
 
 .settings-name {
-    margin: 40px 0 20px 0;
-    font-size: 30px;
-    font-family: Garamond;
+    margin: var(--header-margin);
+    font-size: var(--fontsize-larger);
+    font-family: var(--font-header);
 }

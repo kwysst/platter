@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/app.css';
+import './styles/root.css';
+import './styles/fonts.css';
 
 import { DishGetter } from './hooks/DishGetter';
 import { LocalDB } from './hooks/LocalDB';
 
 import Menu from './components/Dishes/Menu';
 import Settings from './components/Settings/Settings';
-
-
-
-
-document.title = 'Platter';
-document.querySelector("meta[name='description']").content="New menu every day.";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

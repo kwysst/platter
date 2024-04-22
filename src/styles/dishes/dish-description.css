@@ -1,0 +1,38 @@
+.dish-description {
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    max-height: 400px; /* for smooth animation */
+    
+    transition: all .5s ease-out;
+    overflow: hidden;
+}
+.dish-description-hidden {
+    max-height: 0px; /* for smooth animation */
+    transition: all .3s ease-out;
+}
+
+
+.dish-list-wrap {
+    flex: 1;
+    margin: 0px 14px;
+    height: auto;
+}
+
+.dish-list-name {
+    color: var(--color-hard);
+    font-weight: 900;
+    font-size: var(--fontsize-medium);
+    font-family: var(--font-accent);
+}
+
+.dish-list-wrap ul {
+    margin: 4px 0 0 40px;
+}
+.dish-list-wrap li {
+    margin-top: 3px;
+    color: var(--color-soft);
+    font-size: var(--fontsize-small);
+    font-family: var(--font-content);
+}

@@ -2,39 +2,39 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-end;
 
-    width: 100%;
+    width: var(--settings-width);
 
     margin: auto 0 20px 0;
 }
 
+.settings-btn-wrap button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    flex: 1;
+    height: var(--button-size);
 
-
-.settings-refresh-btn {
-    width: calc(80% - 46px - 10px);
-    height: 46px;
-    margin: 0 0 0 10px;
-    border: none;
-    border-radius: 3px;
-    font-size: 20px;
-    background: none;
-    box-shadow: 0px 0px 3px 1px #22222242;
-    font-family: 'Garamond';
+    border: 1px solid #5553;
+    border-radius: 8px;
+    /* box-shadow: 0px 0px 1px 1px #22222222; */
+    background-color: var(--color-background-hard);
+    
+    color: var(--color-hard);
+    font-size: var(--fontsize-large);
+    font-family: var(--font-header);
 }
 
-.settings-back-btn {
-    width: 46px;
-    height: 46px;
-    border: none;
-    border-radius: 3px;
-    font-size: 20px;
-    background: none;
-    box-shadow: 0px 0px 3px 1px #22222242;
-    font-family: 'Garamond';
-    background-image: url('../../source/icons/arrow-back.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 66%;
+.settings-add-btn {
+    margin: 0 5px;
+}
+
+.settings-btn-wrap button svg {
+    width: 34px;
+    height: 34px;
+
+    color: var(--color-hard);
 }
