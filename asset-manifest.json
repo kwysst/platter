@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/platter/static/css/main.f8b17dfa.css",
-    "main.js": "/platter/static/js/main.7882c166.js",
+    "main.css": "/platter/static/css/main.eef71201.css",
+    "main.js": "/platter/static/js/main.21a726ce.js",
     "static/media/LinLibertine.ttf": "/platter/static/media/LinLibertine.f92a89be4241d7c2a459.ttf",
     "static/media/Garamond.ttf": "/platter/static/media/Garamond.4114a151797af532cace.ttf",
     "static/media/Constantine.ttf": "/platter/static/media/Constantine.3ee1143b25cccb6510a0.ttf",
@@ -117,11 +117,11 @@
     "static/media/arrow-back.svg": "/platter/static/media/arrow-back.324bcdc4d6d203104bb8ced63ae71718.svg",
     "static/media/plus.svg": "/platter/static/media/plus.77c789d998d2e5944f3570c9279ce349.svg",
     "static/media/chevron.svg": "/platter/static/media/chevron.3aad1f7324d1e53cf92f829c4b91e054.svg",
-    "main.f8b17dfa.css.map": "/platter/static/css/main.f8b17dfa.css.map",
-    "main.7882c166.js.map": "/platter/static/js/main.7882c166.js.map"
+    "main.eef71201.css.map": "/platter/static/css/main.eef71201.css.map",
+    "main.21a726ce.js.map": "/platter/static/js/main.21a726ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8b17dfa.css",
-    "static/js/main.7882c166.js"
+    "static/css/main.eef71201.css",
+    "static/js/main.21a726ce.js"
   ]
 }
