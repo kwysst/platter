@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as ChevronIcon } from '../../source/icons/chevron.svg'
+import { ReactComponent as CircleIcon } from '../../source/icons/circle.svg'
 import '../../styles/settings/settings-select.css';
 
 export default class Select extends React.Component {
@@ -17,7 +17,7 @@ export default class Select extends React.Component {
                             'status': true
                         });
                     }}>
-                        <ChevronIcon className='select-item-icon'/>
+                        <CircleIcon className='select-item-icon'/>
                         <span className='select-item-text'>{e.categoryName}</span>
                     </li>
                 )}

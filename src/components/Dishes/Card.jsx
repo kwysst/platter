@@ -34,10 +34,7 @@ export default class Card extends React.Component {
 			</div>
 			<div className={this.state.description ? 'dish-description' : 'dish-description dish-description-hidden'}>
 				<CardList name='Список продуктов:' elements={products}/>
-				<span className='dish-card-delimiter'></span>
 				<CardList name='Способ приготовления:' elements={recipe}/>
-				<span className='dish-card-delimiter'></span>
-				<span className='dish-card-delimiter'></span>
 			</div>
 			
 			<div className='dish-category'> { categoryName } </div>

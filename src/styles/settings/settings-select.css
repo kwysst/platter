@@ -25,7 +25,7 @@
     justify-content: center;
     
     width: 70%;
-    padding: 26px 0;
+    padding: 35px 5px;
     
     border-radius: 6px;
     background: var(--color-background-hard);
@@ -60,7 +60,8 @@
     width: 24px;
     height: 24px;
 
-    margin-right: 6px;
+    margin-right: 8px;
 
     color: var(--color-hard);
+    transform: scale(0.7);
 }

@@ -32,7 +32,7 @@
     margin: 0 6px 2px 0;
     
     color: var(--color-hard);
-    font-size: var(--fontsize-large);
+    font-size: var(--fontsize-medium);
     font-family: var(--font-accent);
     line-height: 20px;
 }
@@ -43,7 +43,7 @@
     align-items: center;
     
     color: var(--color-soft);
-    font-weight: 900;
+    /* font-weight: 900; */
     font-size: var(--fontsize-smaller);
     font-family: var(--font-content);
 }

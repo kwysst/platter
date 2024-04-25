@@ -17,21 +17,10 @@
     color: var(--color-hard);
     /* font-weight: 900; */
     font-size: var(--fontsize-large);
-    font-family: var(--font-content);
+    font-family: var(--font-header);
     transition: .2s opacity;
 }
-/* .settings-list > :last-child {
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end;
-    
-    width: var(--button-thick-size);
-    margin-top: 8px;
-    
-    border-radius: 8px;
-    background: var(--color-background-hard);
-    border: 1px solid #2222;
-} */
+
 .settings-list-disabled {
     opacity: 0.3;
 }
