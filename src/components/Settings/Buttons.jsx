@@ -1,15 +1,16 @@
 import React from 'react';
+import '../../styles/settings/settings-btns.css';
+import { Themes } from '../../hooks/Themes';
 import { ReactComponent as ArrowIcon } from '../../source/icons/arrow-back.svg'
 import { ReactComponent as SunIcon } from '../../source/icons/sun.svg'
 import { ReactComponent as MoonIcon } from '../../source/icons/moon.svg'
 import { ReactComponent as PlusIcon } from '../../source/icons/plus.svg'
-import '../../styles/settings/settings-btns.css';
 
 export default class Buttons extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { themeDark: false };
+        this.state = { themeDark: Themes.GetTheme() === 'dark' };
     }
 
 	render() {
@@ -22,6 +23,7 @@ export default class Buttons extends React.Component {
                 this.props.ShowSelect();
             }}><PlusIcon /></button>
             <button className='settings-theme-btn' onClick={() => {
+                Themes.SetTheme(this.state.themeDark ? 'light' : 'dark')
                 this.setState({themeDark: !this.state.themeDark});
             }}>{this.state.themeDark ? 
                     <SunIcon className='settings-inline-icon' /> :

@@ -14,7 +14,7 @@ export default class Settings extends React.Component {
 		this.state = { adding: false, schema: schema };
     }
 
-    // setState & save in localStorage
+    // setState & save template in localStorage
 	UpdateSchemaState(value) {
 		this.setState({ schema: value });
 		this.props.LocalDB.SetSchema(value);

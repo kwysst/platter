@@ -37,3 +37,7 @@
 
     color: var(--color-hard);
 }
+
+.dish-btn-wrap button.dish-btn-disabled {
+    opacity: .35;
+}

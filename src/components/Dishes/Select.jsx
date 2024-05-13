@@ -1,10 +1,9 @@
 import React from 'react';
 import { ReactComponent as CircleIcon } from '../../source/icons/circle.svg'
-import '../../styles/settings/settings-select.css';
 
 export default class Select extends React.Component {
 	render() {
-        const { visible, categories, HideChoice, PushToSchema } = this.props;
+        const { visible, categories, HideChoice, onClick } = this.props;
 		return <div className='settings-select' 
             style={{ zIndex: visible ? 1 : -1, opacity: visible ? 1 : 0 }} 
             onClick={(event) => event.target === event.currentTarget ? HideChoice() : null } >
@@ -12,10 +11,7 @@ export default class Select extends React.Component {
             <ul> 
                 { categories.map((e, i) =>  
                     <li key={++i} onClick={() => {
-                        PushToSchema({
-                            ...e,
-                            'status': true
-                        });
+                        onClick(e.category);
                     }}>
                         <CircleIcon className='select-item-icon'/>
                         <span className='select-item-text'>{e.categoryName}</span>

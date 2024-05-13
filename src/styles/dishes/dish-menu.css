@@ -28,11 +28,9 @@
 }
 
 .dish-menu-name {
+    color: var(--color-hard);
     margin: var(--header-margin);
     
     font-size: var(--fontsize-larger);
     font-family: var(--font-header);
 }
-
-
-

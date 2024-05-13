@@ -40,6 +40,7 @@
     align-items: center;
 
     width: 75%;
+    height: 30px;
     margin: 14px 0;
 }
 
@@ -57,11 +58,11 @@
 .select-item-icon {
     display: flex;
 
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
 
-    margin-right: 8px;
+    margin-right: 12px;
 
-    color: var(--color-hard);
+    color: var(--color-soft);
     transform: scale(0.7);
 }

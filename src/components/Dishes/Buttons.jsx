@@ -6,13 +6,14 @@ import '../../styles/dishes/dish-btns.css';
 
 export default class Buttons extends React.Component {
 	render() {
+        console.log(this.props)
 		return <div className='dish-btn-wrap'>
         <button className='dish-list-btn' onClick={() => {
-            alert('Ведутся технические работы!!!');
-            // this.props.UpdateMenuState(this.props.GetNewMenu());
+            this.props.ShowSelect();
         }}><ListIcon /></button>
-        <button className='dish-refresh-btn' onClick={() => {
-            this.props.UpdateMenuState(this.props.GetNewMenu());
+        <button className={`dish-refresh-btn ${!this.props.listIsMenu ? 'dish-btn-disabled' : ''}`} onClick={() => {
+            if (this.props.listIsMenu) 
+                this.props.UpdateMenuState();
         }}><RefreshIcon /></button>
         <button className='dish-settings-btn' onClick={() => {
             document.getElementById('root')

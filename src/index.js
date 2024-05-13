@@ -4,11 +4,14 @@ import './styles/app.css';
 import './styles/root.css';
 import './styles/fonts.css';
 
+import { Themes } from './hooks/Themes';
 import { DishGetter } from './hooks/DishGetter';
 import { LocalDB } from './hooks/LocalDB';
 
 import Menu from './components/Dishes/Menu';
 import Settings from './components/Settings/Settings';
+
+Themes.SetTheme(Themes.GetTheme());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

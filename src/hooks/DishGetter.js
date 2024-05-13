@@ -46,6 +46,18 @@ class DishGetter {
         return menu;
     }
 
+    static GetDishListByCategory(category) {
+        let catygoryObj = DishGetter.DishObj.filter(e => e.category === category)[0];
+        let dishList = [];
+        for (let i = 0; i < catygoryObj.data.length; i++) {
+            dishList[i] = {};
+            dishList[i].category = catygoryObj.category;
+            dishList[i].categoryName = catygoryObj.categoryName;
+            dishList[i].item = catygoryObj.data[i];
+        }
+        return dishList;
+    }
+
     static GetCategories() {
         return DishGetter.DishObj.map(e => {
             return {
