@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/platter/static/css/main.2592f660.css",
-    "main.js": "/platter/static/js/main.d022a928.js",
+    "main.css": "/platter/static/css/main.bfbf1e1b.css",
+    "main.js": "/platter/static/js/main.384aa40d.js",
     "static/media/LinLibertine.ttf": "/platter/static/media/LinLibertine.f92a89be4241d7c2a459.ttf",
     "static/media/Garamond.ttf": "/platter/static/media/Garamond.4114a151797af532cace.ttf",
     "static/media/Constantine.ttf": "/platter/static/media/Constantine.3ee1143b25cccb6510a0.ttf",
@@ -104,8 +104,6 @@
     "static/media/Чизкейк.jpg": "/platter/static/media/Чизкейк.add0c129e85cafa07a6b.jpg",
     "static/media/Ванильные кексы.jpg": "/platter/static/media/Ванильные кексы.bef4e8458d1de5e416fb.jpg",
     "static/media/settings2.svg": "/platter/static/media/settings2.9d7565fa4b6a34aa95ed9a90e1455f76.svg",
-    "static/media/eye-slash.svg": "/platter/static/media/eye-slash.709d8c2d848a34b1936f23ed638d7d36.svg",
-    "static/media/eye.svg": "/platter/static/media/eye.90d400fb7917d7a061b0b755cd19350c.svg",
     "static/media/sun.svg": "/platter/static/media/sun.c97b78c1794cb7f05c6b921947d57271.svg",
     "static/media/moon.svg": "/platter/static/media/moon.7597e564ac95346fcecce88ec669e843.svg",
     "index.html": "/platter/index.html",
@@ -116,12 +114,12 @@
     "static/media/plus2.svg": "/platter/static/media/plus2.65649e98385132e65b888ca80848f695.svg",
     "static/media/arrow-back.svg": "/platter/static/media/arrow-back.324bcdc4d6d203104bb8ced63ae71718.svg",
     "static/media/plus.svg": "/platter/static/media/plus.77c789d998d2e5944f3570c9279ce349.svg",
-    "static/media/circle.svg": "/platter/static/media/circle.632d52b37546d4c3fc027b489932126b.svg",
-    "main.2592f660.css.map": "/platter/static/css/main.2592f660.css.map",
-    "main.d022a928.js.map": "/platter/static/js/main.d022a928.js.map"
+    "static/media/circle.svg": "/platter/static/media/circle.84b32301da8cd8e41bd7426143cd6576.svg",
+    "main.bfbf1e1b.css.map": "/platter/static/css/main.bfbf1e1b.css.map",
+    "main.384aa40d.js.map": "/platter/static/js/main.384aa40d.js.map"
   },
   "entrypoints": [
-    "static/css/main.2592f660.css",
-    "static/js/main.d022a928.js"
+    "static/css/main.bfbf1e1b.css",
+    "static/js/main.384aa40d.js"
   ]
 }
