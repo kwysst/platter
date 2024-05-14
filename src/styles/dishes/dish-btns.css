@@ -1,0 +1,62 @@
+.dish-btn-wrap {
+    position: absolute;
+
+    right: 4px;
+    bottom: 4px;
+
+    width: 28px;
+    height: 28px;
+}
+
+.dish-btn-wrap div {
+    position: relative;
+
+    width: 28px;
+    height: 28px;
+}
+
+.dish-btn-wrap svg {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+
+    color: var(--color-dark);
+    border-radius: 6px;
+    border: 1px solid #0002;
+    background: var(--color-accent);
+
+    transition: .25s all;
+}
+
+/* .dish-btn-wrap svg:nth-child(2) {
+    margin: 4px 0px;
+} */
+
+
+.dish-btn-wrap svg:first-child {
+    transform: rotateZ(-90deg);
+    z-index: 1;
+}
+
+
+.dish-btn-wrap svg.chevron-showed {
+    transform: rotateZ(90deg);
+}
+
+
+.dish-btn-wrap svg.favourite-showed {
+    bottom: 60px;
+}
+
+.dish-btn-wrap svg.block-showed {
+    bottom: 30px;
+}
+
+.dish-btn-wrap svg.refresh-showed {
+    right: 30px;
+}

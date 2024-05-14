@@ -6,7 +6,8 @@ export class Themes {
         '--color-background-accent': '#fff6e9',
         '--color-shadow-accent': '#ead1c3d4',
         '--color-soft': '#222a',
-        '--color-hard': '#222'
+        '--color-hard': '#222',
+        '--color-accent': '#ffe0b1'
     }
 
     static DarkTheme = {
@@ -15,7 +16,8 @@ export class Themes {
         '--color-background-accent': '#333',
         '--color-shadow-accent': '#0000',
         '--color-soft': '#fff7',
-        '--color-hard': '#fff9'
+        '--color-hard': '#fff9',
+        '--color-accent': '#ffd4a0'
     }
 
     static SetTheme(theme) {

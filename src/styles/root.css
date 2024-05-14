@@ -3,7 +3,7 @@
     --color-background-hard: #fff;
     --color-background-accent: #fff6e9;
     --color-shadow-accent: #ead1c3d4;
-    --color-accent: #ffbd67;
+    --color-accent: #ffe0b1;
     --color-soft: #222a;
     --color-hard: #222;
     --color-light: #fff;
@@ -27,10 +27,10 @@
 
     --card-width: 90%;
     --card-height: 100px;
-    --card-border-radius: 10px; /* 30px 8px 8px 8px; 25px 4px 4px 6px; */
+    --card-border-radius: 8px 4px 4px 8px; /* 30px 8px 8px 8px; 25px 4px 4px 6px; */
 
     --card-content-height: 80px;
-    --dish-image-border-radius: 12px 40px 8px 12px; /* 30px 2px; 15px 5px */
+    --dish-image-border-radius: 8px 40px 2px 8px; /* 30px 2px; 15px 5px */
 
     --settings-width: 80%;
     --settings-inline-icon-height: 32px;

@@ -1,4 +1,5 @@
 .dish-info {
+    position: relative;
     display: flex;
     align-items: center;
     
@@ -9,9 +10,7 @@
 
 .card-image {
     /* width: var(--card-content-height); */
-    height: var(--card-content-height);
-
-    margin-left: 12px;
+    height: var(--card-height);
 
     border-radius: var(--dish-image-border-radius);
 }
@@ -20,17 +19,17 @@
     display: flex;
     flex-direction: column;
 
-    height: var(--card-content-height);
+    height: var(--card-height);
     margin-left: 10px;
 }
 
 .dish-name { 
-    margin: 0 6px 2px 0;
+    margin: 6px 40px 2px 0;
     
     color: var(--color-hard);
     font-size: var(--fontsize-medium);
     font-family: var(--font-accent);
-    line-height: 20px;
+    line-height: 16px;
 }
 
 .dish-kbju, .dish-time {
@@ -40,6 +39,9 @@
     color: var(--color-soft);
     font-size: var(--fontsize-smaller);
     font-family: var(--font-header);
+}
+.dish-kbju {
+    margin-top: 4px;
 }
 
 .dish-icon {

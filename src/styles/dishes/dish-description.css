@@ -16,7 +16,7 @@
 
 .card-list-wrap {
     flex: 1;
-    margin: 0px 14px 10px 14px;
+    margin: 14px 14px 0px 24px;
     height: auto;
 }
 .card-list-wrap:last-child {
@@ -32,7 +32,7 @@
 }
 
 .card-list-wrap li {
-    margin: 2px 0 0 33px;
+    margin: 2px 0 0 36px;
     letter-spacing: 0.4px;
     color: var(--color-soft);
     font-size: var(--fontsize-small);
