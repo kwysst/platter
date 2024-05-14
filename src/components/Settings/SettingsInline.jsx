@@ -3,7 +3,7 @@ import { ReactComponent as DownloadIcon } from '../../source/icons/download.svg'
 import { ReactComponent as UploadIcon } from '../../source/icons/upload.svg'
 import '../../styles/settings/settings-inline.css';
 
-export default class SettingsInline extends React.Component {
+export class SettingsInline extends React.Component {
 
     constructor(props) {
         super(props);

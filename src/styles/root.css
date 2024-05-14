@@ -3,6 +3,7 @@
     --color-background-hard: #fff;
     --color-background-accent: #fff6e9;
     --color-shadow-accent: #ead1c3d4;
+    --color-accent: #ffbd67;
     --color-soft: #222a;
     --color-hard: #222;
     --color-light: #fff;
@@ -10,14 +11,14 @@
     --color-dark: #222;
     --color-dark-soft: #222a;
 
-    --font-header: 'Garamond';
-    --font-content: 'Forum';
+    --font-header: 'Forum';
+    --font-content: 'Garamond';
     --font-accent: 'GunnyRewritten';
 
     --fontsize-larger: 30px;
     --fontsize-large: 22px;
     --fontsize-medium: 20px;
-    --fontsize-small: 14px;
+    --fontsize-small: 16px;
     --fontsize-smaller: 12px;
 
     --button-size: 46px;
@@ -28,8 +29,8 @@
     --card-height: 100px;
     --card-border-radius: 10px; /* 30px 8px 8px 8px; 25px 4px 4px 6px; */
 
-    --dish-card-content-height: 80px;
-    --dish-image-border-radius: 12px 6px 12px 6px; /* 30px 2px; 15px 5px */
+    --card-content-height: 80px;
+    --dish-image-border-radius: 12px 40px 8px 12px; /* 30px 2px; 15px 5px */
 
     --settings-width: 80%;
     --settings-inline-icon-height: 32px;

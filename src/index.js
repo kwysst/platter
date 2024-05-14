@@ -3,28 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './styles/app.css';
 import './styles/root.css';
 import './styles/fonts.css';
+import './styles/footer-btns.css';
 
 import { Themes } from './hooks/Themes';
-import { DishGetter } from './hooks/DishGetter';
-import { LocalDB } from './hooks/LocalDB';
+import { LocalStorage } from './hooks/LocalStorage';
+import { DishesData } from './hooks/DishesData';
 
-import Menu from './components/Dishes/Menu';
-import Settings from './components/Settings/Settings';
+import { DishesView } from './components/Dishes/DishesView';
+import { SettingsView } from './components/Settings/SettingsView';
+
 
 Themes.SetTheme(Themes.GetTheme());
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <>
-      <Menu DishGetter={DishGetter} LocalDB={LocalDB}/>
-      <Settings DishGetter={DishGetter} LocalDB={LocalDB}/>
-  </>
+LocalStorage.CheckForUpdates();
+LocalStorage.SetMenu(DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()));
 
-  // <HashRouter>
-  //   <Routes>
-  //     <Route exact path="/" element={ <div>hello world</div> } />
-  //     <Route exact path="/dishmenu" element={ <DishMenu /> } />
-  //     <Route exact path="/settings" element={ <Settings /> } />
-  //   </Routes> 
-  // </HashRouter>
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<>
+      <DishesView />
+      <SettingsView />
+  </>
 ); 

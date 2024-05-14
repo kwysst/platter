@@ -1,12 +1,14 @@
 .settings-list {
+    width: var(--settings-width);
+}
+
+.settings-list > ul {
     display: flex;
     flex-direction: column;
-
-    width: var(--settings-width);
     list-style: none;
 }
 
-.settings-list > li {
+.settings-list li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -17,7 +19,7 @@
     color: var(--color-hard);
     /* font-weight: 900; */
     font-size: var(--fontsize-large);
-    font-family: var(--font-header);
+    font-family: var(--font-content);
     transition: .2s opacity;
 }
 
@@ -25,7 +27,7 @@
     opacity: 0.3;
 }
 
-.settings-list > li > span {
+.settings-list li > span {
     display: flex;
     flex-direction: row;
 }

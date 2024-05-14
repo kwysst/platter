@@ -1,11 +1,11 @@
-class LocalDB {
+class LocalStorage {
 
 	static CheckForUpdates() {
         if (localStorage.updated !== new Date().toLocaleDateString()) {
-            LocalDB.UpdateDate();
+            LocalStorage.UpdateDate();
             localStorage.menu = [];
 
-            LocalDB.Print()
+            LocalStorage.Print()
         }
 	}
 
@@ -14,7 +14,7 @@ class LocalDB {
     }
     static SetMenu(menu) {
         localStorage.menu = JSON.stringify(menu);
-        LocalDB.Print();
+        LocalStorage.Print();
     }
 
     static GetSchema() {
@@ -40,4 +40,4 @@ class LocalDB {
     }
 }
 
-export { LocalDB }
+export { LocalStorage }

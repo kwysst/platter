@@ -14,30 +14,30 @@
 }
 
 
-.dish-list-wrap {
+.card-list-wrap {
     flex: 1;
     margin: 0px 14px 10px 14px;
     height: auto;
 }
-.dish-list-wrap:last-child {
+.card-list-wrap:last-child {
     margin-bottom: 20px;
 }
 
 
-.dish-list-name {
+.card-list-name {
     color: var(--color-hard);
     /* font-weight: 900; */
     font-size: var(--fontsize-medium);
-    font-family: var(--font-accent);
+    font-family: var(--font-content);
 }
 
-.dish-list-wrap ul {
-    margin-left: 40px;
+.card-list-wrap ul {
+    margin-left: 34px;
 }
-.dish-list-wrap li {
+.card-list-wrap li {
     margin-top: 4px;
     letter-spacing: 0.4px;
     color: var(--color-soft);
     font-size: var(--fontsize-small);
-    font-family: var(--font-content);
+    font-family: var(--font-accent);
 }

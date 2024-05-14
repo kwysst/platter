@@ -1,16 +1,16 @@
-.settings-btn-wrap {
+.footer-btns {
     position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: flex-end;
 
-    width: var(--settings-width);
-
-    margin: auto 0 20px 0;
+    flex: 1;
+    width: calc( var(--card-width)  - 6px);
+    margin: 20px 10px 20px 0;
 }
 
-.settings-btn-wrap button {
+.footer-btns button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,13 +28,18 @@
     font-family: var(--font-header);
 }
 
-.settings-add-btn {
+.footer-btns button.disabled {
+    opacity: .35;
+}
+
+.footer-btns button:nth-child(2) {
     margin: 0 5px;
 }
 
-.settings-btn-wrap button svg {
+.footer-btns button svg {
     width: 34px;
     height: 34px;
 
     color: var(--color-hard);
 }
+

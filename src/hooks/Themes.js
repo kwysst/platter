@@ -1,4 +1,4 @@
-class Themes {
+export class Themes {
 
     static LightTheme = {
         '--color-background-soft': '#fcfcfc',
@@ -12,10 +12,10 @@ class Themes {
     static DarkTheme = {
         '--color-background-soft': '#222',
         '--color-background-hard': '#151515',
-        '--color-background-accent': '#555',
+        '--color-background-accent': '#333',
         '--color-shadow-accent': '#0000',
-        '--color-soft': '#fff8',
-        '--color-hard': '#fffb'
+        '--color-soft': '#fff7',
+        '--color-hard': '#fff9'
     }
 
     static SetTheme(theme) {
@@ -37,5 +37,3 @@ class Themes {
     }
 
 }
-
-export { Themes }

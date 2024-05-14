@@ -1,13 +1,28 @@
 import React from 'react';
-import CardImage from './CardImage';
-import CardList from './CardList';
-import { ReactComponent as PlusIcon } from '../../source/icons/plus2.svg'
-import { ReactComponent as TimerIcon } from '../../source/icons/timer.svg'
+
 import '../../styles/dishes/dish-card.css';
 import '../../styles/dishes/dish-info.css';
-import '../../styles/dishes/dish-description.css';
+import '../../styles/dishes/dish-description.css'; 
 
-export default class Card extends React.Component {
+import { ReactComponent as PlusIcon } from '../../source/icons/plus2.svg'
+import { ReactComponent as TimerIcon } from '../../source/icons/timer.svg'
+
+
+const CardImage = (props) => {
+	let imageSrc;
+	try { imageSrc = require(`../../source/dish-images/${props.category}/${props.image}.jpg`); }
+	catch (e) { imageSrc = require(`../../source/dish-images/tmp.jpg`); }
+	return <img className='card-image' alt='' src={ imageSrc } />
+}
+
+const CardList = (props) => {
+	return <div className="card-list-wrap">
+		<div className="card-list-name">{props.name}</div>
+		<ul>{props.elements.map((e, i) => <li key={i++}>{e}</li>)}</ul>
+	</div>
+}
+
+export class Card extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -30,7 +45,7 @@ export default class Card extends React.Component {
 						<TimerIcon className='dish-icon' />
 						{ time } 
 					</div>
-				</div>
+				</div> 
 			</div>
 			<div className={this.state.description ? 'dish-description' : 'dish-description dish-description-hidden'}>
 				<CardList name='Список продуктов:' elements={products}/>

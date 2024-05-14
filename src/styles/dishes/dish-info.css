@@ -5,11 +5,11 @@
     width: 100%;
     height: var(--card-height);
 }
+ 
 
-
-.dish-card-image {
-    width: var(--dish-card-content-height);
-    height: var(--dish-card-content-height);
+.card-image {
+    width: var(--card-content-height);
+    height: var(--card-content-height);
 
     margin-left: 12px;
 
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
 
-    height: var(--dish-card-content-height);
+    height: var(--card-content-height);
     margin-left: 10px;
 }
 
@@ -45,8 +45,9 @@
     color: var(--color-soft);
     /* font-weight: 900; */
     font-size: var(--fontsize-smaller);
-    font-family: var(--font-content);
+    font-family: var(--font-header);
 }
+
 .dish-icon {
     display: flex;
 
