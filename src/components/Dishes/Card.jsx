@@ -1,6 +1,5 @@
 import React from 'react';
 
-import '../../styles/dishes/dish-card.css';
 import '../../styles/dishes/dish-info.css';
 import '../../styles/dishes/dish-description.css'; 
 

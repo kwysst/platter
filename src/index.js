@@ -9,9 +9,7 @@ import { Themes } from './hooks/Themes';
 import { LocalStorage } from './hooks/LocalStorage';
 import { DishesData } from './hooks/DishesData';
 
-import { DishesView } from './components/Dishes/DishesView';
-import { SettingsView } from './components/Settings/SettingsView';
-
+import { View } from './components/View'
 
 Themes.SetTheme(Themes.GetTheme());
 
@@ -21,7 +19,7 @@ LocalStorage.SetMenu(DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.Get
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<>
-      <DishesView />
-      <SettingsView />
+    <View name='dishes'/>
+    <View name='settings'/>
   </>
 ); 

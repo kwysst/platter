@@ -3,7 +3,7 @@
     flex-direction: column;
     
     width: 100%;
-    max-height: 400px; /* for smooth animation */
+    max-height: 500px; /* for smooth animation */
     
     transition: all .4s ease-out;
     overflow: hidden;
@@ -31,11 +31,8 @@
     font-family: var(--font-content);
 }
 
-.card-list-wrap ul {
-    margin-left: 34px;
-}
 .card-list-wrap li {
-    margin-top: 4px;
+    margin: 2px 0 0 33px;
     letter-spacing: 0.4px;
     color: var(--color-soft);
     font-size: var(--fontsize-small);

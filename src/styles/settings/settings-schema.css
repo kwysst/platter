@@ -1,14 +1,14 @@
-.settings-list {
+.settings-schema {
     width: var(--settings-width);
 }
 
-.settings-list > ul {
+.settings-schema ul {
     display: flex;
     flex-direction: column;
     list-style: none;
 }
 
-.settings-list li {
+.settings-schema li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,27 +23,18 @@
     transition: .2s opacity;
 }
 
-.settings-list-disabled {
+.settings-schema li.disabled {
     opacity: 0.3;
 }
 
-.settings-list li > span {
+.settings-schema span {
     display: flex;
-    flex-direction: row;
+    margin-top: 8px;
 }
 
-.settings-list-icon {
-    display: block;
-    
+.settings-schema svg {    
     width: 28px;
     height: 28px;
     
-    color: var(--color-hard);
-}
-
-.settings-add-icon {
-    width: 40px;
-    height: 40px;
-
     color: var(--color-hard);
 }

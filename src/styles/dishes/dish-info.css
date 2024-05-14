@@ -8,16 +8,12 @@
  
 
 .card-image {
-    width: var(--card-content-height);
+    /* width: var(--card-content-height); */
     height: var(--card-content-height);
 
     margin-left: 12px;
 
     border-radius: var(--dish-image-border-radius);
-    
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 .dish-stats {
@@ -39,11 +35,9 @@
 
 .dish-kbju, .dish-time {
     display: flex;
-    flex-direction: row;
     align-items: center;
     
     color: var(--color-soft);
-    /* font-weight: 900; */
     font-size: var(--fontsize-smaller);
     font-family: var(--font-header);
 }

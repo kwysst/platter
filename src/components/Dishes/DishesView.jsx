@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/dishes/dishes-view.css';
+import '../../styles/dishes/dishes-list.css';
 
 import { LocalStorage } from '../../hooks/LocalStorage';
 import { DishesData } from '../../hooks/DishesData';
@@ -55,6 +55,7 @@ export class DishesView extends React.Component {
 	}
 	
 	render() {
+		const { onTouchStart, onTouchEnd } = this.props;
 		const { menu, listIsMenu, selectShowed } = this.state;
 
 		const categoryList = DishesData.GetCategoryList();
@@ -63,12 +64,14 @@ export class DishesView extends React.Component {
 			categoryName: 'Меню'
 		});
 
-		return <article className='dishes-view'>
-			<div className='dishes-view-wrap'>
-				<section className='dishes-view-name'>{listIsMenu ? 'Меню на сегодня' : menu[0].categoryName }</section>
+		return <article className='dishes-view' onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+			
+				<section className='view-name'>{listIsMenu ? 'Меню на сегодня' : menu[0].categoryName }</section>
 				
-				{ menu.map((e, i) => <Card key={i++} data={e} /> )}
-				
+				<div className='dishes-list-wrap'>
+					{ menu.map((e, i) => <Card key={i++} data={e} /> )}
+				</div>
+
 				<FooterButtons
 					buttons={[
 						{
@@ -100,7 +103,6 @@ export class DishesView extends React.Component {
 						this.SetList(value.category)
 					}}
 				/>
-			</div>
 		</article>
 	}
 };

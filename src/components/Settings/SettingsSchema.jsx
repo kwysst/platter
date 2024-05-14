@@ -4,8 +4,6 @@ import '../../styles/settings/settings-schema.css';
 
 import { LocalStorage } from '../../hooks/LocalStorage';
 
-import { ReactComponent as EyeIcon } from '../../source/icons/eye.svg'
-import { ReactComponent as EyeSlashIcon } from '../../source/icons/eye-slash.svg'
 import { ReactComponent as CloseIcon } from '../../source/icons/close.svg'
 
 
@@ -25,11 +23,11 @@ export class SettingsSchema extends React.Component {
 
 	render() {
         const { schema } = this.props;
-		return <section className='settings-list'>
+		return <section className='settings-schema'>
             <ul>
             {
                 schema.map((schemaItem, i) => 
-                    <li className={schemaItem.status ? '' : 'settings-list-disabled'}
+                    <li className={schemaItem.status ? '' : 'disabled'}
                         key={i++}
                         onClick={(event) => {
                             if (event.target === event.currentTarget) {
@@ -40,16 +38,7 @@ export class SettingsSchema extends React.Component {
                     >
                         {schemaItem.categoryName}
                         <span>
-                            {schemaItem.status ? 
-                                <EyeIcon className='settings-list-icon' onClick={() => {
-                                    schema[i-1].status = !schema[i-1].status;
-                                    this.UpdateSchemaState(schema);
-                                }}/> : 
-                                <EyeSlashIcon className='settings-list-icon' onClick={() => {
-                                    schema[i-1].status = !schema[i-1].status;
-                                    this.UpdateSchemaState(schema);
-                                }}/>}
-                            <CloseIcon className='settings-list-icon' onClick={() => {
+                            <CloseIcon onClick={() => {
                                 schema.splice([i-1], 1);
                                 this.UpdateSchemaState(schema);
                             }}/>

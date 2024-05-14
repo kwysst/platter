@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../../styles/settings/settings-view.css';
-
 import { Themes } from '../../hooks/Themes';
 import { LocalStorage } from '../../hooks/LocalStorage';
 import { DishesData } from '../../hooks/DishesData';
@@ -35,11 +33,13 @@ export class SettingsView extends React.Component {
     }
 
 	render() {
+		const { onTouchStart, onTouchEnd } = this.props;
+
 		const categoryList = DishesData.GetCategoryList();
 		const schema = LocalStorage.GetSchema();
 
-		return <article className='settings-view'>
-			<section className='settings-name'>Настройки</section>
+		return <article className='settings-view' onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+			<section className='view-name'>Настройки</section>
 
 			<SettingsSchema schema={schema} />
 
