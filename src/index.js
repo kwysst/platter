@@ -7,14 +7,14 @@ import './styles/footer-btns.css';
 
 import { Themes } from './hooks/Themes';
 import { LocalStorage } from './hooks/LocalStorage';
-import { DishesData } from './hooks/DishesData';
+// import { DishesData } from './hooks/DishesData';
 
 import { View } from './components/View'
 
 Themes.SetTheme(Themes.GetTheme());
 
 LocalStorage.CheckForUpdates();
-LocalStorage.SetMenu(DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()));
+// LocalStorage.SetMenu(DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()));
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

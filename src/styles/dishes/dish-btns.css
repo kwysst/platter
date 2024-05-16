@@ -1,8 +1,8 @@
 .dish-btn-wrap {
     position: absolute;
 
-    right: 4px;
-    bottom: 4px;
+    right: 6px;
+    bottom: 6px;
 
     width: 28px;
     height: 28px;
@@ -25,7 +25,7 @@
     height: 20px;
     padding: 3px;
 
-    color: var(--color-dark);
+    color: var(--color-soft);
     border-radius: 6px;
     border: 1px solid #0002;
     background: var(--color-accent);
@@ -33,30 +33,19 @@
     transition: .25s all;
 }
 
-/* .dish-btn-wrap svg:nth-child(2) {
-    margin: 4px 0px;
-} */
 
-
-.dish-btn-wrap svg:first-child {
-    transform: rotateZ(-90deg);
-    z-index: 1;
+.dish-btn-wrap svg.chevron-active {
+    transform: rotateZ(180deg);
 }
 
-
-.dish-btn-wrap svg.chevron-showed {
-    transform: rotateZ(90deg);
-}
-
-
-.dish-btn-wrap svg.favourite-showed {
+.dish-btn-wrap svg.fav-active{
     bottom: 60px;
 }
 
-.dish-btn-wrap svg.block-showed {
+.dish-btn-wrap svg.block-active{
     bottom: 30px;
 }
 
-.dish-btn-wrap svg.refresh-showed {
+.dish-btn-wrap svg.refresh-active{
     right: 30px;
 }

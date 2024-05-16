@@ -11,8 +11,8 @@ export function useSwipe(onSwipeLeft, onSwipeRight) {
 
         const positionX = e.changedTouches[0].pageX
         const positionY = e.changedTouches[0].pageY
-        const rangeX = 80;
-        const rangeY = 20;
+        const rangeX = 200;
+        const rangeY = 40;
 
 
         if (Math.abs(positionY - firstTouchY) >= rangeY) return;

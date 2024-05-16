@@ -9,7 +9,6 @@
     overflow: hidden;
 }
 .dish-description-hidden {
-    max-height: 0px; /* for smooth animation */
     transition: all .25s ease-out;
 }
 

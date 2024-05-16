@@ -10,8 +10,13 @@ const GetRnd = (min, max) => Math.round(Math.random() * (max - min) + min);
 
 export class DishesData {
 
+    static GetRandomDishByCategory(category) {
+        let data = DishesData.GetDataByCategory(category);
+        return data[GetRnd(0, data.length - 1)];
+
+    }
     static GetDataByCategory(category) {
-        return DishesData.DishObj.filter(e => e.category === category ? e : null)[0].data;
+        return DishesData.DishObj.find(e => e.category === category).data;
     }
 
     static GetDishesListByCategory(category) {
@@ -26,39 +31,48 @@ export class DishesData {
         return dishList;
     }
 
-    static GetMenu(menu, schema) {
+    static GetMenu(menuList, schema) {
         // both params by default are getting from localStorage
-        const IsMenuValid = (menu, schema) => {
+        const IsMenuValid = (menuList, schema) => {
             let validationSchema = schema.filter(e => e.status && e);
-            if (menu.length !== validationSchema.length) return false;
-            let schemedMenu = menu.filter((dish, i) => {
-                return dish.category === validationSchema[i].category 
-                    ? dish 
-                    : null;
+            if (menuList.length !== validationSchema.length) return false;
+            let schemedMenu = menuList.filter((menuItem, i) => {
+                return menuItem.category === validationSchema[i].category;
             });
-            return schemedMenu.length === menu.length;
+            return schemedMenu.length === menuList.length;
         }
         const GetNewMenu = (schema) => {
             const menu = [];
             let validationSchema = schema.filter(e => e.status && e);
     
             validationSchema.forEach(e => {
-                let data = DishesData.GetDataByCategory(e.category);
                 menu.push({
                     'category': e.category,
                     'categoryName': e.categoryName,
-                    'item': data[GetRnd(0, data.length - 1)]
+                    'item': DishesData.GetRandomDishByCategory(e.category)
                 });
             });
     
             return menu;
         }
+        const FindDish = (name, category) => {
+            return DishesData.GetDataByCategory(category).find(dishItem => dishItem.name === name);
+        }
+        const GetCategoryName = (category) => {
+            return DishesData.DishObj.find(e => e.category === category).categoryName;
+        }
+        
 
+        if (!IsMenuValid(menuList, schema))
+            menuList = GetNewMenu(schema);
+        else
+            menuList = menuList.map(e => e = {
+                category: e.category,
+                categoryName: GetCategoryName(e.category),
+                item: FindDish(e.name, e.category)
+            });
         
-        if (!IsMenuValid(menu, schema))
-            menu = GetNewMenu(schema);
-        
-        return menu;
+        return menuList;
     }
 
     static GetCategoryList() {

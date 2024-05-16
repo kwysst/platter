@@ -20,8 +20,8 @@ export class DishesView extends React.Component {
     UpdateMenuState() {
 		const newMenu = DishesData.GetMenu('', LocalStorage.GetSchema());
 
-        this.setState({ menu: newMenu });
 		LocalStorage.SetMenu(newMenu);
+        this.setState({ menu: newMenu });
     }
 	
 	SetList(value) {
@@ -47,7 +47,7 @@ export class DishesView extends React.Component {
 		super(props);
 
 		this.state = { 
-			menu: LocalStorage.GetMenu(),
+			menu: DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()),
 			selectShowed: false,
 			listIsMenu: true,
 			currentCategory: 'menu'
@@ -67,9 +67,16 @@ export class DishesView extends React.Component {
 		return <article className='dishes-view' onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 			
 				<section className='view-name'>{listIsMenu ? 'Меню на сегодня' : menu[0].categoryName }</section>
-				
+
 				<div className='dishes-list-wrap'>
-					{ menu.map((e, i) => <Card key={i++} data={e} /> )}
+					{ menu.map((dishData, i) => 
+						<Card 
+							key={i} 
+							index={i} 
+							dishData={dishData} 
+							listIsMenu={listIsMenu}
+							/> 
+					)}
 				</div>
 
 				<FooterButtons

@@ -1,16 +1,96 @@
 import React from 'react';
 
 import '../../styles/dishes/dish-info.css';
-import '../../styles/dishes/dish-btns.css';
 import '../../styles/dishes/dish-description.css'; 
 
-import { ReactComponent as ChevronIcon } from '../../source/icons/chevron.svg'
-import { ReactComponent as FavouriteIcon } from '../../source/icons/favourite.svg'
-import { ReactComponent as BlockIcon } from '../../source/icons/block.svg'
-import { ReactComponent as RefreshIcon } from '../../source/icons/refresh.svg'
 import { ReactComponent as PlusIcon } from '../../source/icons/plus2.svg'
 import { ReactComponent as TimerIcon } from '../../source/icons/timer.svg'
 
+import { DishesData } from '../../hooks/DishesData';
+import { LocalStorage } from '../../hooks/LocalStorage';
+import { CardButtons } from './CardButtons';
+
+
+export class Card extends React.Component {
+
+	oldProps = null;
+
+	UpdateDish() {
+		const { index } = this.props;
+		const { category } = this.props.dishData;
+		let dish = this.state.item;
+		while (dish === this.state.item)
+			dish = DishesData.GetRandomDishByCategory(category);
+		
+		let oldMenu = DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema());
+		oldMenu[`${index}`].item = dish;
+
+		this.setState({dishData: oldMenu[`${index}`]});
+		LocalStorage.SetMenu(oldMenu);
+
+		// state updated => props are not relevant;
+		// component will render with state instead of props
+		this.oldProps = this.props;		
+	}
+
+	constructor(props) {
+		super(props);
+
+		this.oldProps = this.props;
+		
+		this.state = {
+			dishData: this.props.dishData,
+			description: false
+		};
+	}
+
+	render() {
+		const { category, categoryName, item } = this.props.dishData;
+		let { dishData } = this.state;
+		let { name, kbju, time, products, recipe } = this.state.dishData.item;
+		
+		// if props are relevant (state wasn't updated);
+		// then render with props;
+		// else render with state;
+		if (this.oldProps.dishData.item !== item) {
+			({ name, kbju, time, products, recipe } = item);
+			({ dishData } = this.props);
+		}
+
+
+		return <section className='dish-card'>
+			<div className='dish-info'>
+				<CardImage category={ category } image={ name } />
+				<div className='dish-stats' onClick={() => this.setState({description: !this.state.description}) }>
+					<div className='dish-name'>{ name } </div>
+					<div className='dish-kbju'>
+						<PlusIcon className='dish-icon' />
+						{ kbju[0] } / { kbju[1] } / { kbju[2] } / { kbju[3] }
+					</div>
+					<div className='dish-time'> 
+						<TimerIcon className='dish-icon' />
+						{ time } 
+					</div>
+				</div>
+
+				<CardButtons 
+					listIsMenu={this.props.listIsMenu}
+					dishData={dishData} 
+					UpdateDish={() => this.UpdateDish()}/>
+			</div>
+
+			<div 
+				className={this.state.description ? 'dish-description' : 'dish-description dish-description-hidden'}
+				style={{maxHeight: this.state.description ? GetMaxHeight([...products, ...recipe]) : '0px'}}
+			>
+				<CardList name='Список продуктов:' elements={products}/>
+				<CardList name='Способ приготовления:' elements={recipe}/>		
+			</div>
+			
+			<div className='dish-category'> { categoryName } </div>
+        </section>
+	}
+};
 
 const CardImage = (props) => {
 	let imageSrc;
@@ -26,57 +106,13 @@ const CardList = (props) => {
 	</div>
 }
 
-export class Card extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = { 
-			description: false,
-			btns: false
-		};
-	}
+function GetMaxHeight (data) {
+	let height = 14 * 2 + 24 * 2 + 20 + 8;
+	const oneLineHeight = 23;
+	const oneLineCharacters = 35;
 
-	render() {
-		const { category, categoryName } = this.props.data;
-		const { name, kbju, time, products, recipe } = this.props.data.item;
-		return <section className='dish-card'>
-			<div className='dish-info'>
-				<CardImage category={ category } image={ name } />
-				<div className='dish-stats' onClick={() => this.setState({description: !this.state.description})}>
-					<div className='dish-name'>{ name } </div>
-					<div className='dish-kbju'>
-						<PlusIcon className='dish-icon' />
-						{ kbju[0] } / { kbju[1] } / { kbju[2] } / { kbju[3] }
-					</div>
-					<div className='dish-time'> 
-						<TimerIcon className='dish-icon' />
-						{ time } 
-					</div>
-				</div>
+	data.map(line => height += Math.ceil(line.length/oneLineCharacters) * oneLineHeight )
 
-				<div className='dish-btn-wrap'>
-					<div>
-						<ChevronIcon className={`${this.state.btns ? 'chevron-showed' : ''}`} onClick={() => {
-							this.setState({ btns: !this.state.btns })
-						}}/>
-						<RefreshIcon className={`${this.state.btns ? 'refresh-showed' : ''}`} onClick={() => {
-							alert('Ведутся технические работы')
-						}}/>
-						<FavouriteIcon className={`${this.state.btns ? 'favourite-showed' : ''}`} onClick={() => {
-							alert('Ведутся технические работы')
-						}}/>
-						<BlockIcon className={`${this.state.btns ? 'block-showed' : ''}`} onClick={() => {
-							alert('Ведутся технические работы')
-						}}/>
-					</div>
-				</div>
-			</div>
-			<div className={this.state.description ? 'dish-description' : 'dish-description dish-description-hidden'}>
-				<CardList name='Список продуктов:' elements={products}/>
-				<CardList name='Способ приготовления:' elements={recipe}/>		
-			</div>
-			
-			<div className='dish-category'> { categoryName } </div>
-        </section>
-	}
-};
+	return height + 'px';
+}
