@@ -38,14 +38,22 @@
     transform: rotateZ(180deg);
 }
 
-.dish-btn-wrap svg.fav-active{
+.dish-btn-wrap svg.refresh-active {
+    right: 30px;
+}
+
+.dish-btn-wrap svg.fav-active {
     bottom: 60px;
 }
 
-.dish-btn-wrap svg.block-active{
+.dish-btn-wrap svg.block-active {
     bottom: 30px;
 }
 
-.dish-btn-wrap svg.refresh-active{
-    right: 30px;
+.dish-btn-wrap svg.fav-clicked,
+.dish-btn-wrap svg.block-clicked {
+    background: #f00;
 }
+
+
+

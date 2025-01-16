@@ -17,19 +17,25 @@ export class Card extends React.Component {
 
 	UpdateDish() {
 		const { index } = this.props;
-		const { category } = this.props.dishData;
-		let dish = this.state.item;
-		while (dish === this.state.item)
-			dish = DishesData.GetRandomDishByCategory(category);
+		const { propsItem, category } = this.props.dishData;
+
+		// || propsItem => is because props may be relevant;
+		let item = this.state.dishData.item || propsItem;
+		let item_from = this.state.dishData.item || propsItem;
+		while (item === item_from) {
+			item = DishesData.GetRandomDishByCategory(category);
+		}
 		
+		// update item in menu list by index
 		let oldMenu = DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema());
-		oldMenu[`${index}`].item = dish;
+		oldMenu[`${index}`].item = item;
 
 		this.setState({dishData: oldMenu[`${index}`]});
 		LocalStorage.SetMenu(oldMenu);
 
 		// state updated => props are not relevant;
 		// component will render with state instead of props
+		// see if statement in render()
 		this.oldProps = this.props;		
 	}
 
@@ -73,9 +79,9 @@ export class Card extends React.Component {
 					</div>
 				</div>
 
-				<CardButtons 
+				<CardButtons
 					listIsMenu={this.props.listIsMenu}
-					dishData={dishData} 
+					dishData={dishData}
 					UpdateDish={() => this.UpdateDish()}/>
 			</div>
 

@@ -6,8 +6,6 @@ class LocalStorage {
             // update date
             localStorage.updated = new Date().toLocaleDateString();
             localStorage.menuList = [];
-
-            LocalStorage.Print()
         }
 	}
 
@@ -25,7 +23,7 @@ class LocalStorage {
 
     
     static GetMenu() {
-        return (localStorage.menuList && JSON.parse(localStorage.menuList)) || [];
+        return JSON.parse(localStorage.menuList || '[]');
     }
     static SetMenu(menu) {
         let localMenu = [];
@@ -38,42 +36,78 @@ class LocalStorage {
     }
     
 
-    static GetFavouriteList() {
-        return (localStorage.menuList && JSON.parse(localStorage.favourite)) || [];
+    static GetFavList() {
+        return JSON.parse(localStorage.favList || '[]');
     }
-    static AddFavourite(dish) {
-        const favList = JSON.parse(localStorage.favList || '[]');
-        favList.push({
-            name: dish.item.name,
-            category: dish.category
-        });
-        localStorage.favList = JSON.stringify(favList);
+    static ToggleFav(dishData) {
+        const AddFav = (dish) => {
+            const favList = JSON.parse(localStorage.favList || '[]');
+            favList.push({
+                name: dish.item.name,
+                category: dish.category
+            });
+            localStorage.favList = JSON.stringify(favList);
+        }
+        const RemoveFav = (dish) => {
+            const favList = JSON.parse(localStorage.favList || '[]')
+                .filter(favDish => favDish.name !== dish.item.name);
+            localStorage.favList = JSON.stringify(favList);
+        }
 
-        LocalStorage.Print()
+
+        const isFav = LocalStorage.GetFavList().find(e => e.name === dishData.item.name) !== undefined;
+        if (isFav) RemoveFav(dishData);
+        else AddFav(dishData);
+
+        return !isFav;
     }
-    static RemoveFavourite(dish) {
-        const favList = JSON.parse(localStorage.favList || '[]');
-        favList.filter(favDish => favDish.name === dish.item.name);
-        localStorage.favList = JSON.stringify(favList);
+
+
+    static GetBlockList() {
+        return JSON.parse(localStorage.blockList || '[]');
+    }
+    static ToggleBlock(dishData) {
+        const AddBlock = (dish) => {
+            const blockList = JSON.parse(localStorage.blockList || '[]');
+            blockList.push({
+                name: dish.item.name,
+                category: dish.category
+            });
+            localStorage.blockList = JSON.stringify(blockList);
+    
+            LocalStorage.Print()
+        }
+        const RemoveBlock = (dish) => {
+            const blockList = JSON.parse(localStorage.blockList || '[]')
+                .filter(favDish => favDish.name === dish.item.name);
+            localStorage.blockList = JSON.stringify(blockList);
+        }
+
+
+        const isBlock = LocalStorage.GetBlockList().find(e => e.name === dishData.item.name) !== undefined;
+        if (isBlock) RemoveBlock(dishData);
+        else AddBlock(dishData);
+
+        return !isBlock;
     }
 
 
     static Print() {
         console.log({ localStorage: {
             updated: localStorage.updated,
-            menuList: (localStorage.menuList && JSON.parse(localStorage.menuList)) || [],
-            schema: (localStorage.schema && JSON.parse(localStorage.schema)) || [],
-            favList: (localStorage.favList && JSON.parse(localStorage.favList)) || []
+            menuList: JSON.parse(localStorage.menuList || '[]'),
+            schema: JSON.parse(localStorage.schema || '[]'),
+            favList: JSON.parse(localStorage.favList || '[]'),
+            blockList: JSON.parse(localStorage.blockList || '[]')
         }})
     }
 
     static Delete() {
         delete localStorage.updated;
         delete localStorage.menuList;
-        delete localStorage.menu;
-        delete localStorage.favourite;
         delete localStorage.schema;
         delete localStorage.favList;
+        delete localStorage.blockList;
     }
 }
 
