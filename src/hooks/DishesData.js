@@ -1,7 +1,6 @@
 import BreakfastData from '../source/dish-data/Breakfast';
 import SoupData from '../source/dish-data/Soup';
-import LunchData from '../source/dish-data/Lunch';
-import DinnerData from '../source/dish-data/Dinner';
+import MainData from '../source/dish-data/Main';
 import SaladData from '../source/dish-data/Salad';
 import DessertData from '../source/dish-data/Dessert.json';
 
@@ -9,6 +8,33 @@ import DessertData from '../source/dish-data/Dessert.json';
 const GetRnd = (min, max) => Math.round(Math.random() * (max - min) + min);
 
 export class DishesData {
+    static DishObj = [
+        {
+            category: 'breakfast',
+            categoryName: 'Завтраки',
+            data: BreakfastData
+        },
+        {
+            category: 'salad',
+            categoryName: 'Салаты',
+            data: SaladData
+        },
+        {
+            category: 'soup',
+            categoryName: 'Супы',
+            data: SoupData
+        },
+        {
+            category: 'main',
+            categoryName: 'Горячее',
+            data: MainData
+        },
+        {
+            category: 'dessert',
+            categoryName: 'Дессерты',
+            data: DessertData
+        }
+    ];
 
     static GetRandomDishByCategory(category) {
         let data = DishesData.GetDataByCategory(category);
@@ -82,37 +108,4 @@ export class DishesData {
                 'categoryName': e.categoryName
         }})
     }
-    
-    static DishObj = [
-        {
-            category: 'breakfast',
-            categoryName: 'Завтраки',
-            data: BreakfastData
-        },
-        {
-            category: 'salad',
-            categoryName: 'Салаты',
-            data: SaladData
-        },
-        {
-            category: 'soup',
-            categoryName: 'Супы',
-            data: SoupData
-        },
-        {
-            category: 'lunch',
-            categoryName: 'Ланчи',
-            data: LunchData
-        },
-        {
-            category: 'dinner',
-            categoryName: 'Ужины',
-            data: DinnerData
-        },
-        {
-            category: 'dessert',
-            categoryName: 'Дессерты',
-            data: DessertData
-        }
-    ];
 }
