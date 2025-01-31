@@ -1,9 +1,9 @@
-import { DishesData } from './DishesData';
+import { Categories } from './Categories';
 
 window.beautifyJSON = function beautifyJSON(category) {
     let result = '[';
-    console.log(DishesData.GetDishesListByCategory(category));
-    DishesData.GetDishesListByCategory(category)
+    console.log(Categories.GetDishesListByCategory(category));
+    Categories.GetDishesListByCategory(category)
     .sort((a, b) => a.item.name > b.item.name ? 1 : -1)
     .forEach(obj => {
         let dish = obj.item
@@ -19,7 +19,7 @@ window.beautifyJSON = function beautifyJSON(category) {
 
 window.getAlreadyHaving = function() {
     let result = '';
-    DishesData.DishObj.forEach(obj => {
+    Categories.DishObj.forEach(obj => {
         result += obj.categoryName + '\n';
         obj.data.forEach(dish => result += '\t' + dish.name + '\n');
     });

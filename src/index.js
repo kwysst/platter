@@ -7,15 +7,16 @@ import './styles/footer-btns.css';
 
 import { Themes } from './hooks/Themes';
 import { LocalStorage } from './hooks/LocalStorage';
-import { DishesData } from './hooks/DishesData';
+import { Categories } from './hooks/Categories';
 import './hooks/jsonFeatures';
 
 import { View } from './components/View'
 
+Categories.Onload();
 Themes.SetTheme(Themes.GetTheme());
 
 LocalStorage.CheckForUpdates();
-LocalStorage.SetMenu(DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()));
+LocalStorage.SetMenu(Categories.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()));
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

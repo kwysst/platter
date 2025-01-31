@@ -3,7 +3,7 @@ import React from 'react';
 import '../../styles/dishes/dishes-list.css';
 
 import { LocalStorage } from '../../hooks/LocalStorage';
-import { DishesData } from '../../hooks/DishesData';
+import { Categories } from '../../hooks/Categories';
 
 import { Card } from './Card';
 import { FooterButtons } from '../FooterButtons';
@@ -18,36 +18,29 @@ export class DishesView extends React.Component {
 
 	// setState & save in localStorage
     UpdateMenuState() {
-		const newMenu = DishesData.GetMenu('', LocalStorage.GetSchema());
+		const newMenu = Categories.GetMenu('', LocalStorage.GetSchema());
 
 		LocalStorage.SetMenu(newMenu);
-        this.setState({ menu: newMenu });
+        this.setState({ list: newMenu });
     }
 	
-	SetList(value) {
-		if (value === 'menu')
-			this.setState({
-				menu: DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()),
-				selectShowed: false,
-				listIsMenu: true,
-				currentCategory: 'menu'
-			});
-		else {
-			const dishesList = DishesData.GetDishesListByCategory(value);
-			this.setState({
-				menu: dishesList,
-				selectShowed: false,
-				listIsMenu: false,
-				currentCategory: dishesList[0].category
-			})
-		}
+	SetList(category) {
+		console.log(category)
+		this.setState({
+			selectShowed: false,
+			listIsMenu: category === 'menu',
+			currentCategory: category,
+			list: category === 'menu' 
+				? Categories.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema())
+				: Categories.list[category].dishes
+		});
 	}
 
 	constructor(props) {
 		super(props);
 
 		this.state = { 
-			menu: DishesData.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()),
+			list: Categories.GetMenu(LocalStorage.GetMenu(), LocalStorage.GetSchema()),
 			selectShowed: false,
 			listIsMenu: true,
 			currentCategory: 'menu'
@@ -56,24 +49,18 @@ export class DishesView extends React.Component {
 	
 	render() {
 		const { onTouchStart, onTouchEnd } = this.props;
-		const { menu, listIsMenu, selectShowed } = this.state;
-
-		const categoryList = DishesData.GetCategoryList();
-		categoryList.unshift({
-			category: 'menu',
-			categoryName: 'Меню'
-		});
+		const { list, listIsMenu, selectShowed } = this.state;
 
 		return <article className='dishes-view' onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 			
-				<section className='view-name'>{listIsMenu ? 'Меню на сегодня' : menu[0].categoryName }</section>
+				<section className='view-name'>{listIsMenu ? 'Меню на сегодня' : list[0].categoryName }</section>
 
 				<div className='dishes-list-wrap'>
-					{ menu.map((dishData, i) => 
+					{ list.map((dish, i) => 
 						<Card 
-							key={i} 
+							key={dish.name + listIsMenu}
 							index={i} 
-							dishData={dishData} 
+							dish={dish} 
 							listIsMenu={listIsMenu}
 							/> 
 					)}
@@ -101,7 +88,6 @@ export class DishesView extends React.Component {
 
 				<Select
 					visible={ selectShowed }
-					categoryList={ categoryList }
 					currentCategory={ this.state.currentCategory }
 					HideSelect={() => {
 						this.setState({selectShowed: false});

@@ -1,16 +1,17 @@
 import React from 'react';
 import '../styles/select.css';
+import { Categories } from '../hooks/Categories';
 import { ReactComponent as CircleIcon } from '../source/icons/circle.svg'
 
 export class Select extends React.Component {
 	render() {
-        const { visible, categoryList, currentCategory, HideSelect, onClick } = this.props;
+        const { visible, currentCategory, HideSelect, onClick } = this.props;
 		return <section className='select' 
             style={{ zIndex: visible ? 1 : -1, opacity: visible ? 1 : 0 }} 
             onClick={(event) => event.target === event.currentTarget ? HideSelect() : null } >
            
             <ul> 
-            { categoryList.map((categoryItem, i) =>  
+            { Object.values(Categories.list).map((categoryItem, i) =>  
                 <li key={++i} onClick={() => {
                     onClick(categoryItem);
                 }}>

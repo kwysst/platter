@@ -26,69 +26,70 @@ class LocalStorage {
         return JSON.parse(localStorage.menuList || '[]');
     }
     static SetMenu(menu) {
-        let localMenu = [];
-        menu.map(e => localMenu.push({
-            name: e.item.name,
-            category: e.category
-        }))
-        localStorage.menuList = JSON.stringify(localMenu);
+        localStorage.menuList = JSON.stringify(menu.map(e => {
+            return {
+                name: e.name,
+                category: e.category
+            }
+        }));
         LocalStorage.Print();
     }
     
 
+    static isFav(name) {
+        return LocalStorage.GetFavList().find(e => e.name === name) !== undefined;
+    }
     static GetFavList() {
         return JSON.parse(localStorage.favList || '[]');
     }
-    static ToggleFav(dishData) {
+    static ToggleFav(dish) {
         const AddFav = (dish) => {
             const favList = JSON.parse(localStorage.favList || '[]');
             favList.push({
-                name: dish.item.name,
+                name: dish.name,
                 category: dish.category
             });
             localStorage.favList = JSON.stringify(favList);
         }
         const RemoveFav = (dish) => {
             const favList = JSON.parse(localStorage.favList || '[]')
-                .filter(favDish => favDish.name !== dish.item.name);
+                .filter(favDish => favDish.name !== dish.name);
             localStorage.favList = JSON.stringify(favList);
         }
 
+        if (LocalStorage.isFav(dish.name)) RemoveFav(dish);
+        else AddFav(dish);
 
-        const isFav = LocalStorage.GetFavList().find(e => e.name === dishData.item.name) !== undefined;
-        if (isFav) RemoveFav(dishData);
-        else AddFav(dishData);
-
-        return !isFav;
+        return LocalStorage.isFav(dish.name);
     }
+    
 
-
+    static isBlock(name) {
+        return LocalStorage.GetBlockList().find(e => e.name === name) !== undefined;
+    }
     static GetBlockList() {
         return JSON.parse(localStorage.blockList || '[]');
     }
-    static ToggleBlock(dishData) {
+    static ToggleBlock(dish) {
         const AddBlock = (dish) => {
             const blockList = JSON.parse(localStorage.blockList || '[]');
             blockList.push({
-                name: dish.item.name,
+                name: dish.name,
                 category: dish.category
             });
             localStorage.blockList = JSON.stringify(blockList);
-    
-            LocalStorage.Print()
         }
         const RemoveBlock = (dish) => {
             const blockList = JSON.parse(localStorage.blockList || '[]')
-                .filter(favDish => favDish.name === dish.item.name);
+                .filter(blockDish => blockDish.name !== dish.name);
             localStorage.blockList = JSON.stringify(blockList);
         }
 
 
-        const isBlock = LocalStorage.GetBlockList().find(e => e.name === dishData.item.name) !== undefined;
-        if (isBlock) RemoveBlock(dishData);
-        else AddBlock(dishData);
+        if (LocalStorage.isBlock(dish.name)) RemoveBlock(dish);
+        else AddBlock(dish);
 
-        return !isBlock;
+        return LocalStorage.isBlock(dish.name);
     }
 
 

@@ -11,22 +11,13 @@ import { LocalStorage } from '../../hooks/LocalStorage';
 
 export class CardButtons extends React.Component {
 
-    oldProps = null;
-    isFavState;
-    isBlockState;
-    UpdatePropsState() { this.oldProps = this.props; }
-    isFav = (name) => LocalStorage.GetFavList().find(e => e.name === name) !== undefined;
-    isBlock = (name) => LocalStorage.GetBlockList().find(e => e.name === name) !== undefined;
-
     constructor(props) {
         super(props);
 
-        this.oldProps = this.props;
-        
-        this.isFavState = this.isFav(this.props.dishData.item.name);
-        this.isBlockState = this.isBlock(this.props.dishData.item.name);
+        this.isFavState = LocalStorage.isFav(this.props.dish.name);
+        this.isBlockState = LocalStorage.isBlock(this.props.dish.name);
 
-        this.state = { 
+        this.state = {
             active: false,
             isFav: this.isFavState,
             isBlock: this.isBlockState
@@ -34,17 +25,10 @@ export class CardButtons extends React.Component {
     }
 
     render() {
-        const { dishData, listIsMenu } = this.props;
-        let { isFav, isBlock } = this.state;
+        const { dish, listIsMenu } = this.props;
+        let isFav = LocalStorage.isFav(dish.name);
+        let isBlock = LocalStorage.isBlock(dish.name);
 
-        // if props are relevant (state wasn't updated);
-		// then render with props;
-		if (this.oldProps.dishData.item !== dishData.item) {
-			[isFav, isBlock ] = [this.isFav(this.props.dishData.item.name), this.isBlock(this.props.dishData.item.name)];
-		}
-
-        console.log(dishData)
-        
         return <div className='dish-btn-wrap'>
             <div>
                 <FavouriteIcon 
@@ -54,9 +38,8 @@ export class CardButtons extends React.Component {
                     `} 
                     onClick={() => {
                         this.setState({
-                            isFav: LocalStorage.ToggleFav(dishData)
+                            isFav: LocalStorage.ToggleFav(dish)
                         });
-                        // this.UpdatePropsState();
                     }
                 }/>
                 <BlockIcon 
@@ -66,14 +49,15 @@ export class CardButtons extends React.Component {
                     `} 
                     onClick={() => {
                         this.setState({
-                            isBlock: LocalStorage.ToggleBlock(dishData)
+                            isBlock: LocalStorage.ToggleBlock(dish)
                         })
                 }}/>
                 {
                     listIsMenu ? 
-                        <RefreshIcon className={`${this.state.active ? 'refresh-active' : ''}`} onClick={() => {
-                            this.props.UpdateDish();
-                            this.UpdatePropsState();
+                        <RefreshIcon 
+                            className={`${this.state.active ? 'refresh-active' : ''}`} 
+                            onClick={() => {
+                                this.props.UpdateDish();
                         }}/> :
                         <></>
                 }

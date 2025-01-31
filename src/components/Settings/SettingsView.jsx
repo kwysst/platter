@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Themes } from '../../hooks/Themes';
 import { LocalStorage } from '../../hooks/LocalStorage';
-import { DishesData } from '../../hooks/DishesData';
+import { Categories } from '../../hooks/Categories';
 
 import { SettingsSchema } from './SettingsSchema'
 import { FooterButtons } from '../FooterButtons'
@@ -35,7 +35,6 @@ export class SettingsView extends React.Component {
 	render() {
 		const { onTouchStart, onTouchEnd } = this.props;
 
-		const categoryList = DishesData.GetCategoryList();
 		const schema = LocalStorage.GetSchema();
 
 		return <article className='settings-view' onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
@@ -70,7 +69,6 @@ export class SettingsView extends React.Component {
 
 			<Select 
 				visible={ this.state.selectShowed }
-				categoryList={ categoryList }
 				HideSelect={() => {
 					this.setState({ selectShowed: false });
 				}}
