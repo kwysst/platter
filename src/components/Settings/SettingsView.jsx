@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Themes } from '../../hooks/Themes';
 import { LocalStorage } from '../../hooks/LocalStorage';
-import { Categories } from '../../hooks/Categories';
 
 import { SettingsSchema } from './SettingsSchema'
 import { FooterButtons } from '../FooterButtons'

@@ -23,7 +23,7 @@
     background: var(--color-background-accent);
 
     border-radius: var(--card-border-radius);
-    box-shadow: 4px 4px 4px var(--color-shadow-accent);
+    box-shadow: 2px 2px 4px var(--color-shadow-accent);
 }
 
 .dish-category {

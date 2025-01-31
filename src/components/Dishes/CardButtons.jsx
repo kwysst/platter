@@ -25,7 +25,7 @@ export class CardButtons extends React.Component {
     }
 
     render() {
-        const { dish, listIsMenu } = this.props;
+        const { dish, listIsMenu, listFilter, UpdateMenuState } = this.props;
         let isFav = LocalStorage.isFav(dish.name);
         let isBlock = LocalStorage.isBlock(dish.name);
 
@@ -37,8 +37,13 @@ export class CardButtons extends React.Component {
                         ${isFav ? 'fav-clicked' : ''}
                     `} 
                     onClick={() => {
+                        let fav = LocalStorage.ToggleFav(dish);
+                        console.log(fav)
+                        console.log(listFilter)
+                        if (listFilter === 'fav')
+                            UpdateMenuState(listFilter);
                         this.setState({
-                            isFav: LocalStorage.ToggleFav(dish)
+                            isFav: fav
                         });
                     }
                 }/>
@@ -48,9 +53,12 @@ export class CardButtons extends React.Component {
                         ${isBlock ? 'block-clicked' : ''}
                     `} 
                     onClick={() => {
+                        let block = LocalStorage.ToggleBlock(dish);
+                        if (listFilter === 'block')
+                            UpdateMenuState(listFilter);
                         this.setState({
-                            isBlock: LocalStorage.ToggleBlock(dish)
-                        })
+                            isBlock: block
+                        });
                 }}/>
                 {
                     listIsMenu ? 
