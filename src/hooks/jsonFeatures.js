@@ -2,9 +2,9 @@ import { Categories } from './Categories';
 
 window.beautifyJSON = function beautifyJSON(category) {
     let result = '[';
-    console.log(Categories.GetDishesListByCategory(category));
-    Categories.GetDishesListByCategory(category)
-    .sort((a, b) => a.item.name > b.item.name ? 1 : -1)
+    console.log(Categories.list[category]);
+    Categories.list[category].dishes
+    .sort((a, b) => a.name > b.name ? 1 : -1)
     .forEach(obj => {
         let dish = obj.item
         result += `{\n"name":"${dish.name}",\n"kbju":[${dish.kbju.toString()}],\n"time":"${dish.time}",\n"products":[\n`;
@@ -19,9 +19,9 @@ window.beautifyJSON = function beautifyJSON(category) {
 
 window.getAlreadyHaving = function() {
     let result = '';
-    Categories.DishObj.forEach(obj => {
+    Object.values(Categories.list).forEach(obj => {
         result += obj.categoryName + '\n';
-        obj.data.forEach(dish => result += '\t' + dish.name + '\n');
+        obj.dishes.forEach(dish => result += '\t' + dish.name + '\n');
     });
     console.log(result);
 }

@@ -67,7 +67,7 @@ export class Card extends React.Component {
 
 	render() {
 		let { listFilter, UpdateMenuState } = this.props;
-		let { dish, index } = this.state;
+		let { dish } = this.state;
 		let { category, categoryName, name, kbju, time, products, recipe } = dish;
 
 
