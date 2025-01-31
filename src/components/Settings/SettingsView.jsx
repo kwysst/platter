@@ -12,6 +12,8 @@ import { ReactComponent as SunIcon } from '../../source/icons/sun.svg'
 import { ReactComponent as MoonIcon } from '../../source/icons/moon.svg'
 import { ReactComponent as PlusIcon } from '../../source/icons/plus.svg'
 
+import { $js } from '../../hooks/JSF'
+
 
 export class SettingsView extends React.Component {
 
@@ -56,9 +58,45 @@ export class SettingsView extends React.Component {
 						enabled: true
 					},
 					{
-						action: () => {
-							Themes.SetTheme(this.state.themeDark ? 'light' : 'dark')
-							this.setState({themeDark: !this.state.themeDark});	
+						action: (event) => {
+							const getTransition = (speed) => {
+								return  'transform '+ speed +'ms ease-in-out,'+
+										'top '+ speed +
+										'ms, left '+ speed + 'ms';
+							} 
+							const speed = 550;
+							const coord = event.target.getBoundingClientRect(); 
+							const size = document.body.getBoundingClientRect()
+							let maxSize = Math.max(size.width, size.height);
+							let maxCoord = maxSize === size.width ? size.width - coord.left : coord.top;
+							let hypotenuse = Math.sqrt(size.width*size.width + size.height* size.height);
+							const scale = 3.5 * 200 * 200 / size.width / size.width * (hypotenuse - maxCoord); 
+							let $anim = $js(`#themeAnimation`); 
+							$anim.css({
+								'display': 'block',
+								'background': (this.state.themeDark ? Themes.LightTheme : Themes.DarkTheme)['--color-background-soft'],
+								'top': coord.top + 'px', 
+							});
+							setTimeout(() => {
+								$anim.animate({
+									'transform': 'scale('+ scale +')'
+								}, getTransition(speed), () => {
+									Themes.SetTheme(this.state.themeDark ? 'light' : 'dark')
+									this.setState({themeDark: !this.state.themeDark});	
+									$anim.animate({
+										'top': size.height * 0.9 + 'px', 
+									}, 0, () => {
+										$anim.animate({
+											'top': '0px', 
+											'transform': 'scale(2)', 
+										}, getTransition(speed), () => {
+											$anim.css({
+												'display': 'none'
+											})
+										});
+									});
+								});
+							}, 1); 
 						},
 						icon: this.state.themeDark ? <MoonIcon /> : <SunIcon />,
 						enabled: true
@@ -81,6 +119,8 @@ export class SettingsView extends React.Component {
                     this.UpdateSchemaState(schema);
 				}}
 			/>
+
+			<div id="themeAnimation"></div> 
 		</article>
 	}				
 }

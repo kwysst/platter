@@ -9,9 +9,9 @@ export class FooterButtons extends React.Component {
                 return <button 
                     key={i++}
                     className={`${!button.enabled ? 'disabled' : ''}`} 
-                    onClick={() => {
+                    onClick={(event) => {
                         if (button.enabled)
-                            button.action();
+                            button.action(event);
                 }}>{button.icon}</button>
             })
         }
