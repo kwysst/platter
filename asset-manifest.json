@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/platter/static/css/main.3d562db1.css",
-    "main.js": "/platter/static/js/main.db4279bb.js",
+    "main.css": "/platter/static/css/main.75126f60.css",
+    "main.js": "/platter/static/js/main.a3873175.js",
     "static/media/LinLibertine.ttf": "/platter/static/media/LinLibertine.f92a89be4241d7c2a459.ttf",
     "static/media/Garamond.ttf": "/platter/static/media/Garamond.4114a151797af532cace.ttf",
     "static/media/Constantine.ttf": "/platter/static/media/Constantine.3ee1143b25cccb6510a0.ttf",
@@ -96,6 +96,7 @@
     "static/media/Салат Цезарь.jpg": "/platter/static/media/Салат Цезарь.c27640738044ffa38857.jpg",
     "static/media/Салат Метель.jpg": "/platter/static/media/Салат Метель.c8f17668d2abbf0c2228.jpg",
     "static/media/Бутерброды с икрой.jpg": "/platter/static/media/Бутерброды с икрой.337f7a8cd1383ed9adbd.jpg",
+    "static/media/Пирог имени Дина Винчестера (Сверхъестественное).jpg": "/platter/static/media/Пирог имени Дина Винчестера (Сверхъестественное).5f4f8f77c1b8db9dfc24.jpg",
     "static/media/Бутерброды с грибами.jpg": "/platter/static/media/Бутерброды с грибами.ca5f010a7c8beef0781e.jpg",
     "static/media/Греческий салат.jpg": "/platter/static/media/Греческий салат.ffeb1d951516c765263d.jpg",
     "static/media/Творожный пирог.jpg": "/platter/static/media/Творожный пирог.a8f435558dde0bf7780f.jpg",
@@ -105,8 +106,10 @@
     "static/media/Ванильные кексы.jpg": "/platter/static/media/Ванильные кексы.bef4e8458d1de5e416fb.jpg",
     "static/media/settings2.svg": "/platter/static/media/settings2.9d7565fa4b6a34aa95ed9a90e1455f76.svg",
     "static/media/favourite.svg": "/platter/static/media/favourite.fda80632803b3fb5575e534293ba0696.svg",
+    "static/media/favourite-thin.svg": "/platter/static/media/favourite-thin.5573d2e4a155339cdad99acc901c9ed5.svg",
     "static/media/sun.svg": "/platter/static/media/sun.c97b78c1794cb7f05c6b921947d57271.svg",
     "static/media/block.svg": "/platter/static/media/block.117363b171d44fb432ec6b14c34211b6.svg",
+    "static/media/block-thin.svg": "/platter/static/media/block-thin.5419683065304846546564fb49d6f64c.svg",
     "static/media/moon.svg": "/platter/static/media/moon.7597e564ac95346fcecce88ec669e843.svg",
     "index.html": "/platter/index.html",
     "static/media/refresh.svg": "/platter/static/media/refresh.3acc09fbcc48f5c363a917b360c286a1.svg",
@@ -119,11 +122,11 @@
     "static/media/arrow-back.svg": "/platter/static/media/arrow-back.324bcdc4d6d203104bb8ced63ae71718.svg",
     "static/media/plus.svg": "/platter/static/media/plus.77c789d998d2e5944f3570c9279ce349.svg",
     "static/media/circle.svg": "/platter/static/media/circle.84b32301da8cd8e41bd7426143cd6576.svg",
-    "main.3d562db1.css.map": "/platter/static/css/main.3d562db1.css.map",
-    "main.db4279bb.js.map": "/platter/static/js/main.db4279bb.js.map"
+    "main.75126f60.css.map": "/platter/static/css/main.75126f60.css.map",
+    "main.a3873175.js.map": "/platter/static/js/main.a3873175.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d562db1.css",
-    "static/js/main.db4279bb.js"
+    "static/css/main.75126f60.css",
+    "static/js/main.a3873175.js"
   ]
 }
