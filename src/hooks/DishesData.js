@@ -31,7 +31,7 @@ export class DishesData {
         },
         {
             category: 'dessert',
-            categoryName: 'Дессерты',
+            categoryName: 'Десерты',
             data: DessertData
         }
     ];

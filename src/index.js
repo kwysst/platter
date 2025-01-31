@@ -8,6 +8,7 @@ import './styles/footer-btns.css';
 import { Themes } from './hooks/Themes';
 import { LocalStorage } from './hooks/LocalStorage';
 import { DishesData } from './hooks/DishesData';
+import './hooks/jsonFeatures';
 
 import { View } from './components/View'
 
