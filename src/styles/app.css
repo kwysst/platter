@@ -43,6 +43,10 @@ article {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
 }
 
+article.settings-view {
+    overflow: hidden;
+}
+
 .view-name {
     color: var(--color-hard);
     margin: var(--header-margin);
