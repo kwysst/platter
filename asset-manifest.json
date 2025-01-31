@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/platter/static/css/main.75126f60.css",
+    "main.css": "/platter/static/css/main.60aa1936.css",
     "main.js": "/platter/static/js/main.a3873175.js",
     "static/media/LinLibertine.ttf": "/platter/static/media/LinLibertine.f92a89be4241d7c2a459.ttf",
     "static/media/Garamond.ttf": "/platter/static/media/Garamond.4114a151797af532cace.ttf",
@@ -122,11 +122,11 @@
     "static/media/arrow-back.svg": "/platter/static/media/arrow-back.324bcdc4d6d203104bb8ced63ae71718.svg",
     "static/media/plus.svg": "/platter/static/media/plus.77c789d998d2e5944f3570c9279ce349.svg",
     "static/media/circle.svg": "/platter/static/media/circle.84b32301da8cd8e41bd7426143cd6576.svg",
-    "main.75126f60.css.map": "/platter/static/css/main.75126f60.css.map",
+    "main.60aa1936.css.map": "/platter/static/css/main.60aa1936.css.map",
     "main.a3873175.js.map": "/platter/static/js/main.a3873175.js.map"
   },
   "entrypoints": [
-    "static/css/main.75126f60.css",
+    "static/css/main.60aa1936.css",
     "static/js/main.a3873175.js"
   ]
 }
